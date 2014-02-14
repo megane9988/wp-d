@@ -1,0 +1,21 @@
+{
+  "name": "megane",
+  "version": "0.0.0",
+  "description": "The easiest way to get started with Foundation + Compass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-regarde": "~0.1.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-contrib-haml": "~0.1.1",
+    "grunt-slim": "~0.1.0",
+    "grunt-open": "~0.2.2"
+  }
+}

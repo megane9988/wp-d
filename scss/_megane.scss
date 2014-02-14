@@ -1,0 +1,92 @@
+// custom setting
+$body-font-color: #222;
+$body-font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+
+// custom css-------------------
+
+//base
+body{
+	color:$body-font-color;
+	font-family:$body-font-family;
+}
+h1, h2, h3, h4, h5, h6 {
+	color:#444;
+	font-family:$body-font-family;
+}
+.full{
+	width: 100%; 
+}
+.mb{
+	margin-bottom: 50px;
+}
+.np{
+	padding: 0;
+}
+img.left{
+	margin-right: 10px;
+}
+img.right{
+	margin-left: 10px;
+}
+
+//layout
+.cover{
+	background-color: #fedeef;
+	padding: 40px 0;
+	width: 100%;
+	overflow: hidden;
+	.title{
+		color: #fff;
+	}
+}
+.main-content{
+	margin-top: 50px;
+	p,li{
+	line-height: 2;
+	font-size: 1.1rem;
+	color: #414141;
+	}
+	p{
+		margin-bottom: 2rem;
+	}
+	h3 {
+	border-left: 8px solid;
+	padding: 10px 10px 10px 15px;
+	margin: 80px 0 30px 0;
+	}
+}
+.site-footer{
+	margin-top: 50px;
+	background-color: #333;
+	color: #fff;
+	padding: 20px 0;
+	.row{
+		margin-bottom: 0;
+	}
+	a{
+		color: #7d7d7d;
+		&:hover{
+			text-decoration: underline;
+		} 
+	}
+}
+
+.main-img{
+	padding: 150px 0;
+	background-color: #fff6cf;
+	background-image: url(../img/bg.png);
+	background-repeat: repeat-x;
+	h1,h2,h3,h4{
+		color: #FFF; 
+	}
+}
+.title{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.panel.np {
+	p,h4{
+		padding: 10px 10px 0 10px;
+		margin: 0;
+	}
+}
