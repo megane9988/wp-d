@@ -1,14 +1,14 @@
 <?php
 // cssとjsの読み込み ---------------------------------------------
-function wp_d_2014_styles() {
-wp_enqueue_style( 'wp_d_2014', get_bloginfo( 'stylesheet_directory') . '/stylesheets/app.css', array(), null, 'all');
+function wp_d_styles() {
+wp_enqueue_style( 'wp_d', get_bloginfo( 'stylesheet_directory') . '/stylesheets/app.css', array(), null, 'all');
 wp_enqueue_script( 'foundation_js', get_bloginfo( 'stylesheet_directory') . '/bower_components/foundation/js/foundation.min.js', array('jquery'), false, true );
 wp_enqueue_script( 'app_js', get_bloginfo( 'stylesheet_directory') . '/js/app.js', array(), false, true );
 }
-add_action( 'wp_enqueue_scripts', 'wp_d_2014_styles');
+add_action( 'wp_enqueue_scripts', 'wp_d_styles');
 
 // titleタグ内を適切に表示 (twentyfourteenから流用)---------------------------------------------
-function wp_d_2014_wp_title( $title, $sep ) {
+function wp_d_wp_title( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() )
@@ -24,15 +24,15 @@ function wp_d_2014_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'wp_d_2014' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'wp_d' ), max( $paged, $page ) );
 
 	return $title;
 }
-add_filter( 'wp_title', 'wp_d_2014_wp_title', 10, 2 );
+add_filter( 'wp_title', 'wp_d_wp_title', 10, 2 );
 
 // ページナビゲーション (twentyfourteenから流用)----------------------------------------------
-if ( ! function_exists( 'wp_d_2014_paging_nav' ) ) :
-function wp_d_2014_paging_nav() {
+if ( ! function_exists( 'wp_d_paging_nav' ) ) :
+function wp_d_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -61,8 +61,8 @@ function wp_d_2014_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 1,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '&larr; 前へ', 'wp_d_2014' ),
-		'next_text' => __( '次へ &rarr;', 'wp_d_2014' )
+		'prev_text' => __( '&larr; 前へ', 'wp_d' ),
+		'next_text' => __( '次へ &rarr;', 'wp_d' )
 	) );
 
 	if ( $links ) :

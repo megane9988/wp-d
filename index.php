@@ -12,17 +12,17 @@
 					<?php if(is_archive()): ?>
 						<h5 class="page-title">
 							<?php if ( is_day() ) :
-								printf( __( '" %s " の一覧', 'wp_d_2014' ), get_the_date() );
+								printf( __( '" %s " の一覧', 'wp_d' ), get_the_date() );
 							elseif ( is_month() ) :
-								printf( __( '" %s " の一覧', 'wp_d_2014' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'wp_d_2014' ) ) );
+								printf( __( '" %s " の一覧', 'wp_d' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'wp_d' ) ) );
 							elseif ( is_year() ) :
-								printf( __( '" %s " の一覧', 'wp_d_2014' ), get_the_date( _x( 'Y', 'yearly archives date format', 'wp_d_2014' ) ) );
+								printf( __( '" %s " の一覧', 'wp_d' ), get_the_date( _x( 'Y', 'yearly archives date format', 'wp_d' ) ) );
 							elseif ( is_category() ) :
-								printf( __( '" %s " の一覧', 'wp_d_2014' ), single_cat_title( '', false ) );
+								printf( __( '" %s " の一覧', 'wp_d' ), single_cat_title( '', false ) );
 							elseif( is_tag() ) :
-								printf( __( '" %s " の一覧', 'wp_d_2014' ), single_tag_title( '', false ) );
+								printf( __( '" %s " の一覧', 'wp_d' ), single_tag_title( '', false ) );
 							else :
-								_e( 'Archives', 'wp_d_2014' );
+								_e( 'Archives', 'wp_d' );
 							endif; ?>
 						</h5>
 						<hr>
@@ -61,7 +61,7 @@
 					<hr>
 					<div class="row">
 						<div class="large-12 columns">
-							<?php wp_d_2014_paging_nav(); ?>
+							<?php wp_d_paging_nav(); ?>
 						</div>
 					</div>
 					<?php if (is_single()){?>
