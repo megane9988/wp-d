@@ -1,6 +1,6 @@
 # How to contribute
 
-[wp-d2014](https://github.com/megane9988/wp-d2014/) is WordPress theme for [WP-D](http://wp-d.org), the blog co-written by professional Web directors, designers, developers and affiliators.
+[wp-d](https://github.com/megane9988/wp-d) is WordPress theme for [WP-D](http://wp-d.org), the blog co-written by professional Web directors, designers, developers and affiliators.
 
 To contribute to us:
 
@@ -14,4 +14,3 @@ To contribute to us:
 
 More over, you can contribute to us in many ways.
 Making reply to our [twitter account](https://twitter.com/wp_d_official), leaving [a comment](http://wp-d.org/about/), blah blah blah...
-
