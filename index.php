@@ -2,8 +2,11 @@
 	<div class="row main-content">
 		<div class="large-9 large-centered columns">
 			<div class="row">
-				<div class="large-2 columns mb"> <img alt="" src="http://1.gravatar.com/avatar/75e55614a2d05d8c7784779e76a1a3d9?s=192&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;r=G" />
-					<p> <a href="#"> hissy</a> </p>
+				<div class="large-2 columns mb">
+					<img alt="" src="http://placehold.it/500x500/ccc/ccc&text=img" />
+					<p>
+						<a href="#">wp-d</a>
+					</p>
 				</div>
 				<div class="large-10 columns">
 					<?php if(is_archive()): ?>
@@ -25,9 +28,14 @@
 						<hr>
 					<?php endif; ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<p><?php the_time('Y.m.d'); ?></p>
+						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<h2>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h2>
+							<p>
+								<?php the_time('Y.m.d'); ?>
+							</p>
+						</div>
 						<?php the_content(); ?>
 						<?php if (!is_page()){?>
 						<ul class="no-bullet post-meta">
@@ -46,18 +54,17 @@
 								} 
 								?>
 						</ul> 
-					<?php }?>
-					<?php edit_post_link('編集','(',')'); ?>  
-					<?php wp_link_pages( ); ?>
-				</div>
-				<hr>
-				<?php endwhile;?>
-				<div class="row">
-					<div class="large-12 columns">
-						<?php wp_d_2014_paging_nav(); ?>
+						<?php }?>
+						<?php edit_post_link('編集','(',')'); ?>  
+						<?php wp_link_pages( ); ?>
+					<?php endwhile;?>
+					<hr>
+					<div class="row">
+						<div class="large-12 columns">
+							<?php wp_d_2014_paging_nav(); ?>
+						</div>
 					</div>
-				</div>
-				<?php if (is_single()){?>
+					<?php if (is_single()){?>
 					<div class="row">
 						<div class="small-6 columns">
 							<?php previous_post_link( '%link', '<span class="meta-nav button">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
@@ -66,7 +73,8 @@
 							<?php next_post_link( '%link', '<span class="meta-nav button">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
 						</div>
 					</div>
-				<?php }?>
+					<?php }?>
+				</div>
 			</div>
 		</div>
 	</div>
