@@ -1,3 +1,25 @@
+// WordPress need
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.bypostauthor,
+.sticky
+{
+	max-width: 100%;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 // custom setting
 $body-font-color: #222;
 $body-font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
