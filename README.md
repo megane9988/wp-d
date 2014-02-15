@@ -1,5 +1,6 @@
 WP-D 2014年 Var.
-- [demo](http://like.m-g-n.me/wp-dnew2014/index02.html)
+- [demo 1column](http://like.m-g-n.me/wp-dnew2014/index02.html)
+- [demo 2column](http://like.m-g-n.me/wp-dnew2014/index02.html)
 
 
 Foundation5-meganeset
