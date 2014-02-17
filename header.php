@@ -10,6 +10,16 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<style>
+			.main-img{
+				background-image: url(
+					<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>
+					);
+				background-repeat: repeat-x;
+			}
+		</style>
+	<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 	<div class="contain-to-grid fixed">
