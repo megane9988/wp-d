@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="large-12 columns text-center">
 					<p>
-						Proudly powered by WordPress | Theme: WP-D-2014 by WP-D.
+						Proudly powered by WordPress | Theme: <?php $wp_d_theme = wp_get_theme(); echo $wp_d_theme->get( 'Name' ); ?> by <?php echo $wp_d_theme->get( 'Author' ); ?>.
 					</p>
 				</div>
 			</div>
