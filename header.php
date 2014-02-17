@@ -54,12 +54,19 @@
 	<div class="main-img mb">
 		<div class="row">
 			<div class="large-12 columns text-center">
-				<h1>
-					郷に入りては郷に従え
-				</h1>
-				<h3>
-					出会いは億千万の胸騒ぎ
-				</h3>
+					<?php
+					if(get_field('catchcopy'))
+					{
+						echo '<h1>' . get_field('catchcopy') . '</h1>';
+					}
+					?>
+					<?php
+					if(get_field('catchcopy'))
+					{
+						echo '<h3>' . get_field('subcopy') . '</h3>';
+					}
+					?>
 			</div>
 		</div>
 	</div>
+
