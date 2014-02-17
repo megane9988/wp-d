@@ -22,7 +22,11 @@
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="contain-to-grid fixed">
+	<div class="contain-to-grid fixed <?php
+		if ( is_admin_bar_showing() ) {
+				echo "adminbar";
+		}
+		?>">
 		<nav class="top-bar" data-topbar="">
 			<ul class="title-area">
 				<li class="name">
