@@ -72,6 +72,7 @@
 			</div>
 		</div>
 		<?php endwhile;?>
+		<?php comments_template(); ?>
 		<hr>
 		<div class="row">
 			<div class="large-12 columns">
