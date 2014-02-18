@@ -22,7 +22,7 @@
 		<?php endif; ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div class="row">
-			<div class="large-2 columns">
+			<div class="large-2 columns show-for-large-up">
 				<div class="row">
 					<div class="large-12 small-3 columns">
 						<?php
