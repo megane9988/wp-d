@@ -37,6 +37,9 @@
 			</div>
 			<div class="large-10 columns">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="prime-banner-top">  
+						<?php do_action('wpdbones-ad-content-above'); ?>
+					</div>
 					<h2> <a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 						</a> </h2>
@@ -45,6 +48,9 @@
 					</date>
 				</div>
 				<?php the_content(); ?>
+					<div class="prime-banner-bottom">  
+						<?php do_action('wpdbones-ad-content-below'); ?>
+					</div>
 				<?php if (!is_page()){?>
 				<ul class="no-bullet post-meta">
 					<?php

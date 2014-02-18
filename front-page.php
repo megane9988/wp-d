@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 <div class="row main-content">
 	<div class="large-9 large-centered columns">
+		<div class="row">
+			<div class="large-12 columns prime-banner-top text-center mb">
+				<div class="">  
+					<?php do_action('wpdbones-ad-content-above'); ?>
+				</div>
+			</div>
+		</div>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div class="row">
 			<div class="large-2 columns show-for-large-up">
@@ -30,6 +37,13 @@
 			<hr>
 		</div>
 		<?php endwhile;?>
+		<div class="row">
+			<div class="large-12 columns prime-banner-top text-center mb">
+				<div class="prime-banner-bottom">  
+					<?php do_action('wpdbones-ad-content-below'); ?>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="large-12 columns">
 				<?php wp_d_paging_nav(); ?>
