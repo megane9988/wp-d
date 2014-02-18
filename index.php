@@ -68,10 +68,10 @@
 				<?php if (is_single()){?>
 				<div class="row">
 					<div class="small-6 columns">
-						<?php previous_post_link( '%link', '<span class="meta-nav button">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
+						<?php previous_post_link( '%link', '<span class="meta-nav button small">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
 					</div>
 					<div class="small-6 columns text-right">
-						<?php next_post_link( '%link', '<span class="meta-nav button">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
+						<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
 					</div>
 				</div>
 				<?php }?>
