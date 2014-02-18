@@ -176,9 +176,16 @@ text-align: center;
 }
 @media screen and (max-width: 500px) {
 	.main-img {
-	padding: 20px 0;
+		padding: 20px 0;
+		&.mb{
+			margin-bottom: 10px;
+		}
+	}
+	.prime-banner-top,.prime-banner-bottom{
+		margin: 0 -15px; 
 	}
 	.main-content{
+		margin-top: 10px;
 		p,li{
 			line-height: 1.5;
 			font-size: 1rem;

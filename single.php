@@ -19,6 +19,9 @@
 			</div>
 			<div class="large-10 columns">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="prime-banner-top">  
+						<?php do_action('wpdbones-ad-content-above'); ?>
+					</div>
 					<h2> 
 						<?php the_title(); ?>
 					</h2>
@@ -31,6 +34,9 @@
 						<?php SocialButtonVertical(); ?>
 					</div>
 					<?php the_content(); ?>
+					<div class="prime-banner-bottom">  
+						<?php do_action('wpdbones-ad-content-below'); ?>
+					</div>
 					<div class="sbver">
 						<?php SocialButtonVertical(); ?>
 					</div>

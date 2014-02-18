@@ -172,17 +172,95 @@ function SocialButtonVertical()
 function wp_d_bookmarks(){
 	?>
 <script>(function(w,d){
-  w._gaq=[["_setAccount","UA-33477429-1"],["_trackPageview"]];
-  w.___gcfg={lang:"ja"};
-  var s,e = d.getElementsByTagName("script")[0],
-  a=function(u,f){if(!d.getElementById(f)){s=d.createElement("script");
-  s.src=u;if(f){s.id=f;}e.parentNode.insertBefore(s,e);}};
-  a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js","ga");
-  a("https://apis.google.com/js/plusone.js");
-  a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
-  a("//platform.twitter.com/widgets.js","twitter-wjs");
-  a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
+	w._gaq=[["_setAccount","UA-33477429-1"],["_trackPageview"]];
+	w.___gcfg={lang:"ja"};
+	var s,e = d.getElementsByTagName("script")[0],
+	a=function(u,f){if(!d.getElementById(f)){s=d.createElement("script");
+	s.src=u;if(f){s.id=f;}e.parentNode.insertBefore(s,e);}};
+	a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js","ga");
+	a("https://apis.google.com/js/plusone.js");
+	a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
+	a("//platform.twitter.com/widgets.js","twitter-wjs");
+	a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
 })(this, document);</script>
 	<?php
 }
 add_action('wp_footer', 'wp_d_bookmarks');
+
+
+// アドセンス設定 ---------------------------------------------
+function wpdbones_ad_content_above(){
+if ( !is_admin() ) :?>
+<div class="adtxt">スポンサードリンク</div>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2866035444666228";
+width = document.documentElement.clientWidth;
+			/* su-pa- */
+			google_ad_slot = "5313631022";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+if (width < 1140) {
+			/* 468左 */
+			google_ad_slot = "4391258702";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+		}
+if (width < 468) {
+			google_ad_slot = "1261575900";
+			google_ad_width = 320;
+			google_ad_height = 100;
+		}
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<?php endif;
+}
+
+function wpdbones_ad_content_below(){
+if ( !is_admin() ) :?>
+<div class="clr"></div>
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-2866035444666228";
+	width = document.documentElement.clientWidth;
+	/* su-pa- */
+	google_ad_slot = "5313631022";
+	google_ad_width = 728;
+	google_ad_height = 90;
+	//-->
+if (width < 1140) {
+			/* 468左 */
+			google_ad_slot = "4391258702";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+		}
+if (width < 468) {
+			google_ad_slot = "9738037505";
+			google_ad_width = 300;
+			google_ad_height = 250;
+		}
+	</script>
+
+
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2866035444666228";
+/* 300250 */
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+<?php endif;
+}
+add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
+add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
