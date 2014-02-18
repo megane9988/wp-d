@@ -40,9 +40,9 @@
 					<h2> <a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 						</a> </h2>
-					<p>
+					<date>
 						<?php the_time('Y.m.d'); ?>
-					</p>
+					</date>
 				</div>
 				<?php the_content(); ?>
 				<?php if (!is_page()){?>

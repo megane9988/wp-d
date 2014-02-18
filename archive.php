@@ -38,9 +38,9 @@
 					<h2> <a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 						</a> </h2>
-					<p>
+					<date>
 						<?php the_time('Y.m.d'); ?>
-					</p>
+					</date>
 				</div>
 				<?php edit_post_link('編集','(',')'); ?>
 			</div>

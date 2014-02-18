@@ -162,6 +162,17 @@ text-align: center;
 		-ms-word-break: break-word;
 		word-break: break-word;
 	}
+	.sbver{
+		overflow: hidden;
+		ul{
+			margin-left: 0;
+			li{
+				float: left;
+				margin-right: 5px;
+				list-style: none;
+			}
+		}
+	}
 }
 @media screen and (max-width: 500px) {
 	.main-img {

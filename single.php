@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="row main-content">
 	<div class="large-9 large-centered columns">
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -18,18 +19,37 @@
 			</div>
 			<div class="large-10 columns">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2> <a href="<?php the_permalink(); ?>">
+					<h2> 
 						<?php the_title(); ?>
-						</a> </h2>
+					</h2>
 					<date>
-						<?php the_time('Y.m.d'); ?>
+						<?php the_time('Y.m.d'); ?> | 
 					</date>
+					<?php the_category(' | '); ?>
+					<?php the_tags('', ' | '); ?>
+					<div class="sbver">
+						<?php SocialButtonVertical(); ?>
+					</div>
+					<?php the_content(); ?>
+					<div class="sbver">
+						<?php SocialButtonVertical(); ?>
+					</div>
+					<?php edit_post_link('編集','(',')'); ?>
+					<?php wp_link_pages( ); ?>
+					<div class="row">
+						<div class="small-6 columns">
+							<?php previous_post_link( '%link', '<span class="meta-nav button small">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
+						</div>
+						<div class="small-6 columns text-right">
+							<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
+						</div>
+					</div>
 				</div>
-				<?php edit_post_link('編集','(',')'); ?>
 			</div>
-			<hr>
 		</div>
 		<?php endwhile;?>
+		<?php comments_template(); ?>
+		<hr>
 		<div class="row">
 			<div class="large-12 columns">
 				<?php wp_d_paging_nav(); ?>

@@ -129,3 +129,60 @@ add_theme_support( 'post-thumbnails' );
 // テーマテストへの対応 ---------------------------------------------
 add_theme_support( 'automatic-feed-links' );
 if ( ! isset( $content_width ) ) $content_width = 703;
+
+// ソーシャルボタンの導入 ---------------------------------------------
+function SocialButtonVertical()
+{ ?>
+<div class="social">
+	<ul>
+	<li>
+		<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
+		data-hatena-bookmark-layout="vertical-balloon"
+		data-hatena-bookmark-url="<?php the_permalink(); ?>">
+			<img src="http://b.st-hatena.com/images/entry-button/button-only.gif"
+				alt="このエントリーをはてなブックマークに追加" width="20" height="20"
+				style="border: none">
+		</a>
+	</li>
+	<li>
+			<a href="https://twitter.com/share" class="twitter-share-button"
+		data-lang="en"
+		data-url="<?php the_permalink(); ?>"
+		data-text="<?php the_title(); ?>"
+		data-count="vertical"
+			>Tweet</a>
+	</li>
+	<li>
+			<div class="g-plusone" data-size="tall" data-href="<?php the_permalink(); ?>"></div>
+	</li>
+	<li>
+			<div class="fb-like"
+		data-href="<?php the_permalink(); ?>"
+		data-layout="box_count"
+		data-send="false"
+		data-width="450"
+		data-show-faces="false">
+			</div>
+	</li>
+	</ul>
+</div>
+<?php }
+
+// ソーシャルボタンの導入 ---------------------------------------------
+function wp_d_bookmarks(){
+	?>
+<script>(function(w,d){
+  w._gaq=[["_setAccount","UA-33477429-1"],["_trackPageview"]];
+  w.___gcfg={lang:"ja"};
+  var s,e = d.getElementsByTagName("script")[0],
+  a=function(u,f){if(!d.getElementById(f)){s=d.createElement("script");
+  s.src=u;if(f){s.id=f;}e.parentNode.insertBefore(s,e);}};
+  a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js","ga");
+  a("https://apis.google.com/js/plusone.js");
+  a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
+  a("//platform.twitter.com/widgets.js","twitter-wjs");
+  a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
+})(this, document);</script>
+	<?php
+}
+add_action('wp_footer', 'wp_d_bookmarks');
