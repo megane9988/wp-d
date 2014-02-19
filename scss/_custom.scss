@@ -114,18 +114,14 @@ img.right{
 		word-break: break-word;
 	}
 	.sbver{
-		text-align: center;
-		.bottom{
-			width: 300px;
-			overflow: hidden;
-			margin: 0 auto;
-		}
+		overflow: hidden;
+		margin: 20px 0;
 		ul{
-			margin-left: 0;
+			margin: 0;
 			li{
+				display: inline;
 				float: left;
 				margin-right: 5px;
-				list-style: none;
 			}
 		}
 	}
@@ -226,6 +222,9 @@ text-align: center;
 		p,li{
 			line-height: 1.5;
 			font-size: 1rem;
+		}
+		h1,h2,h3,{
+			font-size: 1.375rem;
 		}
 	}
 }
