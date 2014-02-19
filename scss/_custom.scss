@@ -91,7 +91,7 @@ img.right{
 	//blockquote
 	blockquote {
 		background: #f9f9f9;
-		border-left: 10px solid #ccc;
+		border-left: 8px solid #ccc;
 		margin: 1.5em 10px;
 		padding: 0.5em 10px;
 		quotes: "\201C""\201D""\2018""\2019";
@@ -126,17 +126,20 @@ img.right{
 		}
 	}
 	span {
-		font-size: 130%;
 		&.r{
+			font-size: 130%;
 			color: #d92239;
 		}
 		&.g{
+			font-size: 130%;
 			color: #009452;
 		}
 		&.b{
+			font-size: 130%;
 			color: #2b5da9;
 		}
 		&.p{
+			font-size: 130%;
 			color: #ff6d7f;
 		}
 	}
@@ -225,6 +228,9 @@ text-align: center;
 		}
 		h1,h2,h3,{
 			font-size: 1.375rem;
+		}
+		blockquote {
+			margin: 1.5em 0;
 		}
 	}
 }
