@@ -1,0 +1,124 @@
+#chatlog{
+	.left {
+	position: relative;
+	background: #f3f3f3;
+	border: 1px solid #eaeaea;
+	width: 90%;
+	padding: 20px;
+	margin-right:auto;
+	margin-bottom: 20px;
+	clear:both;
+	}
+	.left:after, .left:before {
+		right: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position:absolute;
+		pointer-events: none;
+	}
+	.left:after {
+		border-color: rgba(136, 183, 213, 0);
+		border-right-color: #f3f3f3;
+		border-width: 10px;
+		top: 50%;
+		margin-top: -10px;
+	}
+	.left:before {
+		border-color: rgba(194, 225, 245, 0);
+		border-right-color: #eaeaea;
+		border-width: 13px;
+		top: 50%;
+		margin-top: -13px;
+	}
+	.right{
+	position: relative;
+	background: #f7f4ea;
+	border: 1px solid #eaeaea;
+	width: 90%;
+	padding: 20px;
+	margin-left:auto;
+	margin-bottom: 20px;
+	clear:both;
+	}
+	.right:after, .right:before {
+	left: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position:absolute;
+	pointer-events: none;
+	}
+	.right:after {
+		border-color: rgba(136, 183, 213, 0);
+		border-left-color: #f7f4ea;
+		border-width: 10px;
+		top: 50%;
+		margin-top: -10px;
+	}
+	.right:before {
+		border-color: rgba(194, 225, 245, 0);
+		border-left-color: #eaeaea;
+		border-width: 13px;
+		top: 50%;
+		margin-top: -13px;
+	}
+}
+@font-face {
+	font-family: 'icon-font';
+	src: url("../font/EFON.eot");
+}
+@font-face {
+	font-family: icon-font;
+	src: url("../font/EFON.otf") format("otf"), url("../font/EFON.ttf") format('truetype');
+}
+.icon1,.icon2,.icon3,.icon4,.icon5,.icon6,.icon7,.icon8,.icon9,.icon10,.icon11,.icon12,.icon13,.icon14 {
+	font-family: icon-font,rial, sans-serif;
+	font-size: 40px;
+	float:left;
+	padding-right: 10px;
+}
+.icon1  {
+	color: #a76fb9;
+}
+.icon2  {
+	color: #fa4608;
+}
+.icon3  {
+	color: #96c72e;
+}
+.icon4  {
+	color: #009453;
+}
+.icon5  {
+	color: #fccd23;
+}
+.icon6  {
+	color: #009452;
+}
+.icon7  {
+	color: #c80e71;
+}
+.icon8  {
+	color: #d92239;
+}
+.icon9  {
+	color: #2b5da9;
+}
+.icon10  {
+	color: #d11a55;
+}
+.icon11  {
+	color: #f7b01f;
+}
+.icon12  {
+	color: #d1e62c;
+}
+.icon13  {
+	color: #3d83f0;
+}
+.icon14  {
+	color: #00a08d;
+}

@@ -117,6 +117,21 @@ img.right{
 			}
 		}
 	}
+	span {
+		font-size: 130%;
+		&.r{
+			color: #d92239;
+		}
+		&.g{
+			color: #009452;
+		}
+		&.b{
+			color: #2b5da9;
+		}
+		&.p{
+			color: #ff6d7f;
+		}
+	}
 }
 .site-footer{
 	margin-top: 50px;
@@ -139,9 +154,7 @@ img.right{
 
 .main-img{
 	padding: 150px 0;
-	background-color: #fff6cf;
-	background-image: url(../img/bg.png);
-	background-repeat: repeat-x;
+	background-color: #eee;
 	h1,h2,h3,h4{
 		color: #FFF; 
 	}

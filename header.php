@@ -51,10 +51,7 @@
 			</section>
 		</nav>
 	</div>
-	<div class="main-img <?php
-		$author = get_userdata($post->post_author);
-		echo $author->display_name;
-		?>
+	<div class="main-img <?php $author = get_userdata($post->post_author); echo $author->display_name; ?>
 	">
 		<div class="row">
 			<div class="large-12 columns text-center">
