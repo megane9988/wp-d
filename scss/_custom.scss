@@ -10,9 +10,11 @@
 }
 .alignleft {
 	float: left;
+	margin-right: 10px;
 }
 .alignright {
 	float: right;
+	margin-left: 10px;
 }
 .aligncenter {
 	display: block;
@@ -141,6 +143,16 @@ img.right{
 		&.p{
 			color: #ff6d7f;
 		}
+	}
+	.next_bt {
+	padding: 10px;
+	display: block;
+	background-color: #2c3e50;
+	color: #fff;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	clear: both;
 	}
 }
 .site-footer{
