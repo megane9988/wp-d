@@ -19,9 +19,6 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.contain-to-grid.fixed.adminbar{
-	top:32px;
-}
 
 // custom setting
 $body-font-color: #222;
@@ -42,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%; 
 }
 .mb{
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 .np{
 	padding: 0;
@@ -65,7 +62,7 @@ img.right{
 	}
 }
 .main-content{
-	margin-top: 50px;
+	margin-top: 20px;
 	p,li{
 	line-height: 2;
 	font-size: 1.1rem;
@@ -78,6 +75,47 @@ img.right{
 	border-left: 8px solid;
 	padding: 10px 10px 10px 15px;
 	margin: 30px 0 10px 0;
+	}
+	//blockquote
+	blockquote {
+		background: #f9f9f9;
+		border-left: 10px solid #ccc;
+		margin: 1.5em 10px;
+		padding: 0.5em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+	blockquote p {
+		display: inline;
+	}
+	pre{
+		background: #f9f9f9;
+		padding: 20px;
+		-ms-word-break: break-word;
+		word-break: break-word;
+	}
+	.sbver{
+		text-align: center;
+		.bottom{
+			width: 300px;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+		ul{
+			margin-left: 0;
+			li{
+				float: left;
+				margin-right: 5px;
+				list-style: none;
+			}
+		}
 	}
 }
 .site-footer{
@@ -134,46 +172,10 @@ text-align: center;
 	display: inline-block;
 	border: 1px solid #ccc;
 }
-
-//コンテンツ部分
-.main-content {
-	//blockquote
-	blockquote {
-		background: #f9f9f9;
-		border-left: 10px solid #ccc;
-		margin: 1.5em 10px;
-		padding: 0.5em 10px;
-		quotes: "\201C""\201D""\2018""\2019";
-	}
-	blockquote:before {
-		color: #ccc;
-		content: open-quote;
-		font-size: 4em;
-		line-height: 0.1em;
-		margin-right: 0.25em;
-		vertical-align: -0.4em;
-	}
-	blockquote p {
-		display: inline;
-	}
-	pre{
-		background: #f9f9f9;
-		padding: 20px;
-		-ms-word-break: break-word;
-		word-break: break-word;
-	}
-	.sbver{
-		overflow: hidden;
-		ul{
-			margin-left: 0;
-			li{
-				float: left;
-				margin-right: 5px;
-				list-style: none;
-			}
-		}
-	}
+.prime-banner-top,.prime-banner-bottom{
+	margin-bottom: 50px
 }
+
 @media screen and (max-width: 500px) {
 	.main-img {
 		padding: 20px 0;
@@ -181,8 +183,8 @@ text-align: center;
 			margin-bottom: 10px;
 		}
 	}
-	.prime-banner-top{
-		margin: 0 -15px; 
+	.prime-banner-top,.prime-banner-bottom{
+		margin: 0 -15px 20px -15px;
 	}
 	.main-content{
 		margin-top: 10px;

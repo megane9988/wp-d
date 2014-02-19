@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="large-10 columns">
+			<div class="large-10 columns mb">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="prime-banner-top">  
 						<?php do_action('wpdbones-ad-content-above'); ?>
@@ -45,6 +45,7 @@
 						</a> </h2>
 					<date>
 						<?php the_time('Y.m.d'); ?>
+						<?php edit_post_link('編集','(',')'); ?>
 					</date>
 				</div>
 				<?php the_content(); ?>
@@ -69,7 +70,6 @@
 							?>
 				</ul>
 				<?php }?>
-				<?php edit_post_link('編集','(',')'); ?>
 				<?php wp_link_pages( ); ?>
 				<?php if (is_single()){?>
 				<div class="row">

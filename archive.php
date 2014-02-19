@@ -3,8 +3,8 @@
 <div class="row main-content">
 	<div class="large-9 large-centered columns">
 		<div class="row">
-			<div class="large-12 columns prime-banner-top text-center mb">
-				<div class="">  
+			<div class="large-12 columns">
+				<div class="prime-banner-top text-center">
 					<?php do_action('wpdbones-ad-content-above'); ?>
 				</div>
 			</div>
@@ -40,23 +40,23 @@
 					</div>
 				</div>
 			</div>
-			<div class="large-10 columns">
+			<div class="large-10 columns mb">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h2> <a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 						</a> </h2>
 					<date>
 						<?php the_time('Y.m.d'); ?>
+						<?php edit_post_link('編集','(',')'); ?>
 					</date>
 				</div>
-				<?php edit_post_link('編集','(',')'); ?>
 			</div>
 			<hr>
 		</div>
 		<?php endwhile;?>
 		<div class="row">
-			<div class="large-12 columns prime-banner-top text-center mb">
-				<div class="prime-banner-bottom">  
+			<div class="large-12 columns">
+				<div class="prime-banner-bottom text-center">
 					<?php do_action('wpdbones-ad-content-below'); ?>
 				</div>
 			</div>

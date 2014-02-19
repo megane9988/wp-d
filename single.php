@@ -19,9 +19,6 @@
 			</div>
 			<div class="large-10 columns">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="prime-banner-top">  
-						<?php do_action('wpdbones-ad-content-above'); ?>
-					</div>
 					<h2> 
 						<?php the_title(); ?>
 					</h2>
@@ -30,30 +27,49 @@
 					</date>
 					<?php the_category(' | '); ?>
 					<?php the_tags('', ' | '); ?>
-					<div class="sbver">
-						<?php SocialButtonVertical(); ?>
-					</div>
-					<?php the_content(); ?>
-					<div class="prime-banner-bottom">  
-						<?php do_action('wpdbones-ad-content-below'); ?>
-					</div>
-					<div class="sbver">
-						<?php SocialButtonVertical(); ?>
-					</div>
 					<?php edit_post_link('編集','(',')'); ?>
-					<?php wp_link_pages( ); ?>
-					<div class="row">
-						<div class="small-6 columns">
-							<?php previous_post_link( '%link', '<span class="meta-nav button small">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
-						</div>
-						<div class="small-6 columns text-right">
-							<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
+					<div class="sbver">
+						<div class="social">
+							<?php SocialButtonVertical(); ?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="large-10 large-centered columns">
+				<div class="row">
+					<div class="large-12 columns">
+						<div class="prime-banner-top text-center">
+							<?php do_action('wpdbones-ad-content-above'); ?>
+						</div>
+					</div>
+				</div>
+				<?php the_content(); ?>
+				<div class="sbver">
+					<div class="social bottom">
+						<?php SocialButtonVertical(); ?>
+					</div>
+				</div>
+				<?php wp_link_pages( ); ?>
+			</div>
+		</div>
 		<?php endwhile;?>
+		<div class="row">
+			<div class="large-12 columns">
+				<div class="row">
+					<div class="small-6 columns">
+						<?php previous_post_link( '%link', '<span class="meta-nav button small">' . _x( '&larr;前の記事', '', '' ) . '</span>' ); ?>
+					</div>
+					<div class="small-6 columns text-right">
+						<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
+					</div>
+				</div>
+				<div class="prime-banner-bottom text-center">
+					<?php do_action('wpdbones-ad-content-below'); ?>
+				</div>
+			</div>
+		</div>
 		<?php comments_template(); ?>
 		<hr>
 		<div class="row">

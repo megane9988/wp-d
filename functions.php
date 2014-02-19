@@ -133,7 +133,6 @@ if ( ! isset( $content_width ) ) $content_width = 703;
 // ソーシャルボタンの導入 ---------------------------------------------
 function SocialButtonVertical()
 { ?>
-<div class="social">
 	<ul>
 	<li>
 		<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
@@ -165,7 +164,6 @@ function SocialButtonVertical()
 			</div>
 	</li>
 	</ul>
-</div>
 <?php }
 
 // ソーシャルボタンの導入 ---------------------------------------------

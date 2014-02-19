@@ -22,11 +22,7 @@
 	<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="contain-to-grid fixed <?php
-		if ( is_admin_bar_showing() ) {
-				echo "adminbar";
-		}
-		?>">
+	<div class="contain-to-grid">
 		<nav class="top-bar" data-topbar="">
 			<ul class="title-area">
 				<li class="name">
@@ -55,7 +51,7 @@
 			</section>
 		</nav>
 	</div>
-	<div class="main-img mb <?php
+	<div class="main-img <?php
 		$author = get_userdata($post->post_author);
 		echo $author->display_name;
 		?>
