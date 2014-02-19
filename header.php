@@ -18,6 +18,7 @@
 					);
 				background-repeat: repeat-x;
 				background-position: center center;
+				background-size:contain;
 			}
 		</style>
 	<?php endif; ?>
