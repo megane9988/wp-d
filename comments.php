@@ -5,7 +5,7 @@ if (post_password_required()) {
 ?>
 <div id="comments">
 <?php if (have_comments()): ?>
-		<h3 id="comments-count"><?php echo get_comments_number().' 件のコメント'; ?></h3>
+		<h2 id="comments-count"><?php echo get_comments_number().' 件のコメント'; ?></h2>
 		<ul id="comments-list">
 				<?php wp_list_comments(array('avatar_size'=>48,'style'=>'ul','type'=>'comment')); ?>
 		</ul>

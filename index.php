@@ -40,10 +40,10 @@
 					<div class="prime-banner-top">  
 						<?php do_action('wpdbones-ad-content-above'); ?>
 					</div>
-					<h2> <a href="<?php the_permalink(); ?>">
+					<h2 class="entry-title"> <a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 						</a> </h2>
-					<date>
+					<date class="published">
 						<?php the_time('Y.m.d'); ?>
 						<?php edit_post_link('編集','(',')'); ?>
 					</date>

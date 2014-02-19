@@ -19,10 +19,10 @@
 			</div>
 			<div class="large-10 columns">
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2> 
+					<h1 class="entry-title"> 
 						<?php the_title(); ?>
-					</h2>
-					<date>
+					</h1>
+					<date class="published">
 						<?php the_time('Y.m.d'); ?> | 
 					</date>
 					<?php the_category(' | '); ?>
