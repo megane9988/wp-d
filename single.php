@@ -38,13 +38,7 @@
 		</div>
 		<div class="row">
 			<div class="large-10 large-centered columns">
-				<div class="row">
-					<div class="large-12 columns">
-						<div class="prime-banner-top text-center">
-							<?php do_action('wpdbones-ad-content-above'); ?>
-						</div>
-					</div>
-				</div>
+				<?php do_action('wpdbones-ad-content-first'); ?>
 				<?php the_content(); ?>
 				<div class="sbver">
 					<div class="social bottom">
@@ -65,9 +59,7 @@
 						<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
 					</div>
 				</div>
-				<div class="prime-banner-bottom text-center">
-					<?php do_action('wpdbones-ad-content-below'); ?>
-				</div>
+				<?php do_action('wpdbones-ad-content-below'); ?>
 			</div>
 		</div>
 		<?php comments_template(); ?>

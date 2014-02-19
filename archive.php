@@ -2,13 +2,6 @@
 
 <div class="row main-content">
 	<div class="large-9 large-centered columns">
-		<div class="row">
-			<div class="large-12 columns">
-				<div class="prime-banner-top text-center">
-					<?php do_action('wpdbones-ad-content-above'); ?>
-				</div>
-			</div>
-		</div>
 		<h5 class="page-title">
 			<?php if ( is_day() ) :
 						printf( __( '" %s " の一覧', 'wp_d' ), get_the_date() );
@@ -25,7 +18,8 @@
 					endif; ?>
 		</h5>
 		<hr>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php $counter = 0;
+			while ( have_posts() ) : the_post(); $counter++;?>
 		<div class="row">
 			<div class="large-2 columns show-for-large-up">
 				<div class="row">
@@ -52,15 +46,13 @@
 				</div>
 			</div>
 			<hr>
+			<?php
+			if ($counter == 1) {do_action('wpdbones-ad-content-first') ;} 
+			if ($counter == 2) {do_action('wpdbones-ad-content-above') ;} 
+			if ($counter == 3) {do_action('wpdbones-ad-content-above') ;} 
+			?>
 		</div>
 		<?php endwhile;?>
-		<div class="row">
-			<div class="large-12 columns">
-				<div class="prime-banner-bottom text-center">
-					<?php do_action('wpdbones-ad-content-below'); ?>
-				</div>
-			</div>
-		</div>
 		<div class="row">
 			<div class="large-12 columns">
 				<?php wp_d_paging_nav(); ?>

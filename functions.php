@@ -187,35 +187,69 @@ add_action('wp_footer', 'wp_d_bookmarks');
 
 
 // アドセンス設定 ---------------------------------------------
+function wpdbones_ad_content_first(){
+if ( !is_admin() ) :?>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="prime-banner-top text-center">
+			<div class="adtxt">スポンサードリンク</div>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- レスポンシブ -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2866035444666228"
+			     data-ad-slot="7284098701"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</div>
+<?php endif;
+}
+
 function wpdbones_ad_content_above(){
 if ( !is_admin() ) :?>
-<div class="adtxt">スポンサードリンク</div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- レスポンシブ -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2866035444666228"
-     data-ad-slot="7284098701"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="prime-banner-top text-center">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- レスポンシブ -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2866035444666228"
+			     data-ad-slot="7284098701"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</div>
 <?php endif;
 }
 
 function wpdbones_ad_content_below(){
 if ( !is_admin() ) :?>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- レスポンシブ -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2866035444666228"
-     data-ad-slot="7284098701"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="prime-banner-bottom text-center">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- レスポンシブ -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-2866035444666228"
+		     data-ad-slot="7284098701"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		</div>
+	</div>
+</div>
 <?php endif;
 }
+add_action( 'wpdbones-ad-content-first', 'wpdbones_ad_content_first' );
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
