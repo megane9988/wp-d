@@ -1,4 +1,5 @@
 #chatlog{
+	overflow: hidden;
 	.left {
 	position: relative;
 	background: #f3f3f3;
@@ -66,6 +67,9 @@
 		border-width: 13px;
 		top: 50%;
 		margin-top: -13px;
+	}
+	h1,h2,h3,h4,pre{
+		clear: both;
 	}
 }
 

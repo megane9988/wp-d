@@ -6,10 +6,9 @@ if (post_password_required()) {
 <div id="comments">
 <?php if (have_comments()): ?>
 		<h2 id="comments-count"><?php echo get_comments_number().' 件のコメント'; ?></h2>
-		<ul id="comments-list">
+		<ol id="comments-list">
 				<?php wp_list_comments(array('avatar_size'=>48,'style'=>'ul','type'=>'comment')); ?>
-		</ul>
-
+		</ol>
 <?php if ( get_comment_pages_count() > 1) : ?>
 		<ul id="comments-pagination">
 				<li id="prev-comments"><?php previous_comments_link('&lt;&lt; 前のコメント'); ?></li>
