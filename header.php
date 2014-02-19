@@ -17,6 +17,7 @@
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>
 					);
 				background-repeat: repeat-x;
+				background-position: center center;
 			}
 		</style>
 	<?php endif; ?>
