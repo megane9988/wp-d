@@ -1,7 +1,7 @@
 <?php
 // cssとjsの読み込み ---------------------------------------------
 function wp_d_styles() {
-wp_enqueue_style( 'wp_d', get_bloginfo( 'stylesheet_directory') . '/stylesheets/app.css?142020', array(), null, 'all');
+wp_enqueue_style( 'wp_d', get_bloginfo( 'stylesheet_directory') . '/stylesheets/app.css?1420202', array(), null, 'all');
 wp_enqueue_script( 'foundation_js', get_bloginfo( 'stylesheet_directory') . '/bower_components/foundation/js/foundation.min.js', array('jquery'), false, true );
 wp_enqueue_script( 'app_js', get_bloginfo( 'stylesheet_directory') . '/js/app.js', array(), false, true );
 }
