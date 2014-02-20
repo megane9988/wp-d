@@ -17,8 +17,11 @@
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>
 					);
 				background-repeat: repeat-x;
-				background-position: center center;
-				background-size:contain;
+				background-position: center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
 			}
 		</style>
 	<?php endif; ?>
