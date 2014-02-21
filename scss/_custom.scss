@@ -77,13 +77,25 @@ img.right{
 }
 .main-content{
 	margin-top: 20px;
-	p,li{
+	p{
 		line-height: 1.5;
 		font-size: 1.1rem;
 		color: #595959;
 	}
-	p{
-		margin-bottom: 2rem;
+	ul,ol{
+		margin-left: 50px;
+	}
+	li{
+		line-height: 1.5;
+		font-size: 1.1rem;
+		color: #595959;
+		margin-bottom: 1rem;
+	}
+	p,ul,pre{
+		margin-bottom: 1rem;
+	}
+	h2,h3,h4{
+		margin-top: 2rem;
 	}
 	h2 {
 		border-left: 8px solid;
@@ -111,6 +123,9 @@ img.right{
 		margin: 1.5em 10px;
 		padding: 0.5em 10px;
 		quotes: "\201C""\201D""\2018""\2019";
+		h2,h3,h4,h5{
+			margin-top: 0;
+		}
 	}
 	blockquote:before {
 		color: #ccc;
@@ -124,8 +139,9 @@ img.right{
 		display: inline;
 	}
 	pre{
-		background: #f9f9f9;
+		background: #383838;
 		padding: 20px;
+		color: #00D365;
 		-ms-word-break: break-word;
 		word-break: break-word;
 	}
@@ -276,6 +292,9 @@ text-align: center;
 		}
 		blockquote {
 			margin: 1.5em 0;
+		}
+		ul{
+			margin-left: 30px;
 		}
 	}
 	.avatar img {
