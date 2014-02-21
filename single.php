@@ -40,6 +40,7 @@
 			<div class="large-10 large-centered columns">
 				<?php do_action('wpdbones-ad-content-first'); ?>
 				<?php the_content(); ?>
+				<?php do_action('wpdbones-ad-content-below'); ?>
 				<?php wp_link_pages('before=<div class="link-page mb">&after=</div>&next_or_number=number&pagelink=<span class="page-numbers">%</span>'); ?>
 				<div class="sbver">
 					<div class="social">
@@ -59,7 +60,6 @@
 						<?php next_post_link( '%link', '<span class="meta-nav button small">' . _x( '次の記事&rarr;', '', '' ) . '</span>' ); ?>
 					</div>
 				</div>
-				<?php do_action('wpdbones-ad-content-below'); ?>
 			</div>
 		</div>
 		<?php comments_template(); ?>
