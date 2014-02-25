@@ -253,3 +253,15 @@ if ( !is_admin() ) :?>
 add_action( 'wpdbones-ad-content-first', 'wpdbones_ad_content_first' );
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
+
+if (!function_exists('get_field')) {
+	function get_field($key) {
+		if ($key == 'catchcopy') {
+			return '投稿のキャッチコピーを表示（ACFを有効化し"catchcopy"というキーでフィールドを設定してください）';
+		} elseif ($key == 'subcopy') {
+			return '投稿のサブコピーを表示（ACFを有効化し"subcopy"というキーでフィールドを設定してください）';
+		} else {
+			return 'Advanced Custom Fieldsプラグインが有効化されていません。';
+		}
+	}
+}

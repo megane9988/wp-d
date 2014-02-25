@@ -67,7 +67,7 @@
 					}
 					?>
 					<?php
-					if(get_field('catchcopy'))
+					if(get_field('subcopy'))
 					{
 						echo '<h3>' . get_field('subcopy') . '</h3>';
 					}
