@@ -209,7 +209,8 @@ img.right{
 	padding: 150px 0;
 	background-color: #eee;
 	h1,h2,h3,h4{
-		color: #FFF; 
+		color: #FFF;
+		@include text-shadow(2px 2px 1px #000);
 	}
 }
 .title{
