@@ -32,8 +32,8 @@
 		</div>
 		<?php
 		if ($counter == 1) {do_action('wpdbones-ad-content-first') ;} 
-		if ($counter == 2) {do_action('wpdbones-ad-content-above') ;} 
-		if ($counter == 3) {do_action('wpdbones-ad-content-above') ;} 
+		if ($counter == 4) {do_action('wpdbones-ad-content-above') ;} 
+		if ($counter == 9) {do_action('wpdbones-ad-content-above') ;} 
 		?>
 		<?php endwhile;?>
 		<div class="row">

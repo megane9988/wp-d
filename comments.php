@@ -10,10 +10,24 @@ if (post_password_required()) {
 				<?php wp_list_comments(array('avatar_size'=>48,'style'=>'ul','type'=>'comment')); ?>
 		</ol>
 <?php if ( get_comment_pages_count() > 1) : ?>
-		<ul id="comments-pagination">
-				<li id="prev-comments"><?php previous_comments_link('&lt;&lt; 前のコメント'); ?></li>
-				<li id="next-comments"><?php next_comments_link('次のコメント &gt;&gt;'); ?></li>
-		</ul>
+		<div class="row">
+			<div class="large-12 columns">
+				<div id="comments-pagination" class="row">
+					<div class="small-6 columns">
+						<?php previous_comments_link('&lt;&lt; 前のコメント'); ?>
+					</div>
+					<div class="small-6 columns text-right">
+						<?php next_comments_link('次のコメント &gt;&gt;'); ?>
+					</div>
+				</div>
+			</div>
+		</div>
 <?php endif; endif; ?>
 <?php comment_form(); ?>
 </div><!-- comments -->
+
+
+
+
+
+
