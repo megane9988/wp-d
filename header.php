@@ -31,6 +31,7 @@
 		<nav class="top-bar" data-topbar="">
 			<ul class="title-area">
 				<li class="name">
+					<span class="icon-wpd02"></span>
 					<h1>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<?php bloginfo( 'name' ); ?>
