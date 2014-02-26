@@ -196,10 +196,10 @@ if ( !is_admin() ) :?>
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- レスポンシブ -->
 			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-2866035444666228"
-			     data-ad-slot="7284098701"
-			     data-ad-format="auto"></ins>
+					 style="display:block"
+					 data-ad-client="ca-pub-2866035444666228"
+					 data-ad-slot="7284098701"
+					 data-ad-format="auto"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
@@ -217,10 +217,10 @@ if ( !is_admin() ) :?>
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- レスポンシブ -->
 			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-2866035444666228"
-			     data-ad-slot="7284098701"
-			     data-ad-format="auto"></ins>
+					 style="display:block"
+					 data-ad-client="ca-pub-2866035444666228"
+					 data-ad-slot="7284098701"
+					 data-ad-format="auto"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
@@ -238,10 +238,10 @@ if ( !is_admin() ) :?>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- レスポンシブ -->
 		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-2866035444666228"
-		     data-ad-slot="7284098701"
-		     data-ad-format="auto"></ins>
+				 style="display:block"
+				 data-ad-client="ca-pub-2866035444666228"
+				 data-ad-slot="7284098701"
+				 data-ad-format="auto"></ins>
 		<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
@@ -264,4 +264,22 @@ if (!function_exists('get_field')) {
 			return 'Advanced Custom Fieldsプラグインが有効化されていません。';
 		}
 	}
+}
+
+// モバイルのキャッシュを処理する ---------------------------------------------
+add_filter('nginxchampuru_get_cache', 'nginxchampuru_get_cache', 10, 2);
+function nginxchampuru_get_cache($key, $url = null) {
+		global $nginxchampuru;
+		if (!$url) {
+				$url = $nginxchampuru->get_the_url();
+		}
+		$keys = array(
+				$key,
+				$nginxchampuru->get_cache_key($url.'@ktai'),
+				$nginxchampuru->get_cache_key($url.'@smartphone'),
+		);
+		if ($key !== $nginxchampuru->get_cache_key($url)) {
+				$keys[] = $nginxchampuru->get_cache_key($url);
+		}
+		return $nginxchampuru->get_cache_file($keys);
 }
