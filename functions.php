@@ -286,7 +286,7 @@ function nginxchampuru_get_cache($key, $url = null) {
 
 // Jetpackの関連記事のタイトルを編集 ---------------------------------------------
 function jetpackme_move_related_posts_titles( $options ) {
-	$options = echo '<h3>関連の記事</h3>';
+	$options = '<h3>関連の記事</h3>';
     return $options;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_move_related_posts_titles' );
