@@ -2,71 +2,71 @@
 	overflow: hidden;
 	.left {
 	position: relative;
-	background: #f3f3f3;
-	border: 1px solid #eaeaea;
-	width: 90%;
-	padding: 20px;
-	margin-left: 10px;
+	clear:both;
 	margin-right:auto;
 	margin-bottom: 20px;
-	clear:both;
+	margin-left: 10px;
+	padding: 20px;
+	width: 90%;
+	border: 1px solid #eaeaea;
+	background: #f3f3f3;
 	}
 	.left:after, .left:before {
+		position:absolute;
 		right: 100%;
+		width: 0;
+		height: 0;
 		border: solid transparent;
 		content: " ";
-		height: 0;
-		width: 0;
-		position:absolute;
 		pointer-events: none;
 	}
 	.left:after {
-		border-color: rgba(136, 183, 213, 0);
-		border-right-color: #f3f3f3;
-		border-width: 10px;
 		top: 50%;
 		margin-top: -10px;
+		border-width: 10px;
+		border-color: rgba(136, 183, 213, 0);
+		border-right-color: #f3f3f3;
 	}
 	.left:before {
-		border-color: rgba(194, 225, 245, 0);
-		border-right-color: #eaeaea;
-		border-width: 13px;
 		top: 50%;
 		margin-top: -13px;
+		border-width: 13px;
+		border-color: rgba(194, 225, 245, 0);
+		border-right-color: #eaeaea;
 	}
 	.right{
 	position: relative;
-	background: #f7f4ea;
-	border: 1px solid #eaeaea;
-	width: 90%;
-	padding: 20px;
-	margin-left:auto;
+	clear:both;
 	margin-right: 10px;
 	margin-bottom: 20px;
-	clear:both;
+	margin-left:auto;
+	padding: 20px;
+	width: 90%;
+	border: 1px solid #eaeaea;
+	background: #f7f4ea;
 	}
 	.right:after, .right:before {
+	position:absolute;
 	left: 100%;
+	width: 0;
+	height: 0;
 	border: solid transparent;
 	content: " ";
-	height: 0;
-	width: 0;
-	position:absolute;
 	pointer-events: none;
 	}
 	.right:after {
-		border-color: rgba(136, 183, 213, 0);
-		border-left-color: #f7f4ea;
-		border-width: 10px;
 		top: 50%;
 		margin-top: -10px;
+		border-width: 10px;
+		border-color: rgba(136, 183, 213, 0);
+		border-left-color: #f7f4ea;
 	}
 	.right:before {
-		border-color: rgba(194, 225, 245, 0);
-		border-left-color: #eaeaea;
-		border-width: 13px;
 		top: 50%;
 		margin-top: -13px;
+		border-width: 13px;
+		border-color: rgba(194, 225, 245, 0);
+		border-left-color: #eaeaea;
 	}
 	h1,h2,h3,h4,pre{
 		clear: both;
@@ -85,10 +85,10 @@
 	src: url("../font/EFON.otf") format("otf"), url("../font/EFON.ttf") format('truetype');
 }
 .icon1,.icon2,.icon3,.icon4,.icon5,.icon6,.icon7,.icon8,.icon9,.icon10,.icon11,.icon12,.icon13,.icon14 {
-	font-family: icon-font,rial, sans-serif;
-	font-size: 40px;
 	float:left;
 	padding-right: 10px;
+	font-size: 40px;
+	font-family: icon-font,rial, sans-serif;
 }
 .icon1  {
 	color: #a76fb9;
