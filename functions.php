@@ -209,7 +209,30 @@ if ( !is_admin() ) :?>
 <?php endif;
 }
 
-function wpdbones_ad_content_above(){
+function wpdbones_ad_content_return(){
+if ( !is_admin() ) :
+$ad_return = '
+<div class="row">
+	<div class="large-12 columns">
+		<div class="prime-banner-top text-center">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- レスポンシブ -->
+			<ins class="adsbygoogle"
+					 style="display:block"
+					 data-ad-client="ca-pub-2866035444666228"
+					 data-ad-slot="7284098701"
+					 data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</div>';
+endif;
+return $ad_return;
+}
+
+function wpdbones_ad_content_above($ad_above){
 if ( !is_admin() ) :?>
 <div class="row">
 	<div class="large-12 columns">
@@ -253,6 +276,14 @@ if ( !is_admin() ) :?>
 add_action( 'wpdbones-ad-content-first', 'wpdbones_ad_content_first' );
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
+
+
+// コンテンツ下 アドセンス設定 ---------------------------------------------
+remove_filter( 'the_content', 'pad_add_author' ); //一度フィルターを外す
+add_filter( 'the_content', 'pad_add_author', 11 ); //順番を後にしてフィルターを付け直す
+add_filter( 'the_content', function($content){
+return $content .wpdbones_ad_content_return();
+}, 10 );
 
 if (!function_exists('get_field')) {
 	function get_field($key) {
@@ -300,9 +331,3 @@ function wp_d_jetpack_open_graph_base_tags( $tags ) {
 	return $tags;
 }
 add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
-
-add_filter( 'the_content','megane','2');
-function megane($content){
-	$megane = '<div class="row"><div class="large-12 columns"><div class="prime-banner-bottom text-center"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- レスポンシブ --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2866035444666228" data-ad-slot="7284098701" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div>';
-	return $content.$megane;
-}
