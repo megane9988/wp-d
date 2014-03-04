@@ -300,3 +300,9 @@ function wp_d_jetpack_open_graph_base_tags( $tags ) {
 	return $tags;
 }
 add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
+
+add_filter( 'the_content','megane','2');
+function megane($content){
+	$megane = '<div class="row"><div class="large-12 columns"><div class="prime-banner-bottom text-center"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- レスポンシブ --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2866035444666228" data-ad-slot="7284098701" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div>';
+	return $content.$megane;
+}
