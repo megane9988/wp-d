@@ -297,5 +297,6 @@ function wp_d_jetpack_open_graph_base_tags( $tags ) {
 		$copy = get_field('catchcopy') . get_field('subcopy');
 		$tags['og:description'] = ($copy) ? $copy : $tags['og:description'];
 	}
+	return $tags;
 }
 add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
