@@ -290,3 +290,12 @@ function jetpackme_move_related_posts_titles( $options ) {
     return $options;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_move_related_posts_titles' );
+
+// Jetpackのog:descriptionをキャッチコピーに差し替え
+function wp_d_jetpack_open_graph_base_tags( $tags ) {
+	if ( function_exists('get_field') && is_singular() ) {
+		$copy = get_field('catchcopy') . get_field('subcopy');
+		$tags['og:description'] = ($copy) ? $copy : $tags['og:description'];
+	}
+}
+add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
