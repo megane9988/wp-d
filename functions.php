@@ -185,7 +185,6 @@ function wp_d_bookmarks(){
 }
 add_action('wp_footer', 'wp_d_bookmarks');
 
-
 // アドセンス設定 ---------------------------------------------
 function wpdbones_ad_content_first(){
 if ( !is_admin() ) :?>
@@ -207,29 +206,6 @@ if ( !is_admin() ) :?>
 	</div>
 </div>
 <?php endif;
-}
-
-function wpdbones_ad_content_return(){
-if ( !is_admin() ) :
-$ad_return = '
-<div class="row">
-	<div class="large-12 columns">
-		<div class="prime-banner-top text-center">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- レスポンシブ -->
-			<ins class="adsbygoogle"
-					 style="display:block"
-					 data-ad-client="ca-pub-2866035444666228"
-					 data-ad-slot="7284098701"
-					 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-		</div>
-	</div>
-</div>';
-endif;
-return $ad_return;
 }
 
 function wpdbones_ad_content_above($ad_above){
@@ -277,14 +253,7 @@ add_action( 'wpdbones-ad-content-first', 'wpdbones_ad_content_first' );
 add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
 add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
 
-
-// コンテンツ下 アドセンス設定 ---------------------------------------------
-remove_filter( 'the_content', 'pad_add_author' ); //一度フィルターを外す
-add_filter( 'the_content', 'pad_add_author', 11 ); //順番を後にしてフィルターを付け直す
-add_filter( 'the_content', function($content){
-return $content .wpdbones_ad_content_return();
-}, 10 );
-
+// ヘッダーのACFへの考慮 ---------------------------------------------
 if (!function_exists('get_field')) {
 	function get_field($key) {
 		if ($key == 'catchcopy') {
@@ -295,24 +264,6 @@ if (!function_exists('get_field')) {
 			return 'Advanced Custom Fieldsプラグインが有効化されていません。';
 		}
 	}
-}
-
-// モバイルのキャッシュを処理する ---------------------------------------------
-add_filter('nginxchampuru_get_cache', 'nginxchampuru_get_cache', 10, 2);
-function nginxchampuru_get_cache($key, $url = null) {
-		global $nginxchampuru;
-		if (!$url) {
-				$url = $nginxchampuru->get_the_url();
-		}
-		$keys = array(
-				$key,
-				$nginxchampuru->get_cache_key($url.'@ktai'),
-				$nginxchampuru->get_cache_key($url.'@smartphone'),
-		);
-		if ($key !== $nginxchampuru->get_cache_key($url)) {
-				$keys[] = $nginxchampuru->get_cache_key($url);
-		}
-		return $nginxchampuru->get_cache_file($keys);
 }
 
 // Jetpackの関連記事のタイトルを編集 ---------------------------------------------
@@ -331,3 +282,6 @@ function wp_d_jetpack_open_graph_base_tags( $tags ) {
 	return $tags;
 }
 add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
+
+// 著者情報を一旦外す ---------------------------------------------
+remove_filter( 'the_content', 'pad_add_author' ); 
