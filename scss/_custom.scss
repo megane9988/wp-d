@@ -64,6 +64,9 @@ img.left{
 img.right{
 	margin-left: 10px;
 }
+iframe.fb_iframe_widget_lift{
+	max-width: none;
+}
 nav .icon-wpd02 {
 	float: left;
 	margin: 0 10px;
@@ -156,8 +159,8 @@ nav .icon-wpd02 {
 		word-break: break-word;
 	}
 	.sbver{
-		overflow: hidden;
 		margin: 20px 0;
+		@include clearfix;
 		ul{
 			margin: 0;
 			li{

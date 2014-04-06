@@ -7790,6 +7790,11 @@ img.right {
 }
 
 /* line 67, ../scss/_custom.scss */
+iframe.fb_iframe_widget_lift {
+  max-width: none;
+}
+
+/* line 70, ../scss/_custom.scss */
 nav .icon-wpd02 {
   float: left;
   margin: 0 10px;
@@ -7798,76 +7803,76 @@ nav .icon-wpd02 {
   line-height: 140%;
 }
 
-/* line 74, ../scss/_custom.scss */
+/* line 77, ../scss/_custom.scss */
 .title-area {
   min-width: 150px;
 }
 
-/* line 79, ../scss/_custom.scss */
+/* line 82, ../scss/_custom.scss */
 .cover {
   overflow: hidden;
   padding: 40px 0;
   width: 100%;
   background-color: #fedeef;
 }
-/* line 84, ../scss/_custom.scss */
+/* line 87, ../scss/_custom.scss */
 .cover .title {
   color: #fff;
 }
 
-/* line 88, ../scss/_custom.scss */
+/* line 91, ../scss/_custom.scss */
 .main-content {
   margin-top: 20px;
 }
-/* line 90, ../scss/_custom.scss */
+/* line 93, ../scss/_custom.scss */
 .main-content p {
   color: #595959;
   font-size: 1.1rem;
   line-height: 1.5;
 }
-/* line 95, ../scss/_custom.scss */
+/* line 98, ../scss/_custom.scss */
 .main-content ul, .main-content ol {
   margin-left: 50px;
 }
-/* line 98, ../scss/_custom.scss */
+/* line 101, ../scss/_custom.scss */
 .main-content li {
   color: #595959;
   font-size: 1.1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
-/* line 104, ../scss/_custom.scss */
+/* line 107, ../scss/_custom.scss */
 .main-content p, .main-content ul, .main-content pre {
   margin-bottom: 2rem;
 }
-/* line 107, ../scss/_custom.scss */
+/* line 110, ../scss/_custom.scss */
 .main-content h2, .main-content h3, .main-content h4 {
   margin-top: 2rem;
 }
-/* line 110, ../scss/_custom.scss */
+/* line 113, ../scss/_custom.scss */
 .main-content h2 {
   margin: 30px 0 10px 0;
   padding: 10px 10px 10px 15px;
   border-left: 8px solid;
 }
-/* line 114, ../scss/_custom.scss */
+/* line 117, ../scss/_custom.scss */
 .main-content h2.entry-title {
   margin: 0.2rem 0 0.5rem 0;
   padding: 0;
   border: none;
   font-size: 1.8rem;
 }
-/* line 121, ../scss/_custom.scss */
+/* line 124, ../scss/_custom.scss */
 .main-content h3 {
   padding: 10px;
   border-bottom: 1px dashed #ccc;
   background-color: #f9f9f9;
 }
-/* line 126, ../scss/_custom.scss */
+/* line 129, ../scss/_custom.scss */
 .main-content h4 {
   border-bottom: 1px dashed #ccc;
 }
-/* line 130, ../scss/_custom.scss */
+/* line 133, ../scss/_custom.scss */
 .main-content blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
@@ -7875,11 +7880,11 @@ nav .icon-wpd02 {
   background: #f9f9f9;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-/* line 136, ../scss/_custom.scss */
+/* line 139, ../scss/_custom.scss */
 .main-content blockquote h2, .main-content blockquote h3, .main-content blockquote h4, .main-content blockquote h5 {
   margin-top: 0;
 }
-/* line 140, ../scss/_custom.scss */
+/* line 143, ../scss/_custom.scss */
 .main-content blockquote:before {
   margin-right: 0.25em;
   color: #ccc;
@@ -7888,11 +7893,11 @@ nav .icon-wpd02 {
   font-size: 4em;
   line-height: 0.1em;
 }
-/* line 148, ../scss/_custom.scss */
+/* line 151, ../scss/_custom.scss */
 .main-content blockquote p {
   display: inline;
 }
-/* line 151, ../scss/_custom.scss */
+/* line 154, ../scss/_custom.scss */
 .main-content pre {
   padding: 20px;
   background: #383838;
@@ -7900,42 +7905,51 @@ nav .icon-wpd02 {
   -ms-word-break: break-word;
   word-break: break-word;
 }
-/* line 158, ../scss/_custom.scss */
-.main-content .sbver {
-  overflow: hidden;
-  margin: 20px 0;
-}
 /* line 161, ../scss/_custom.scss */
+.main-content .sbver {
+  margin: 20px 0;
+  *zoom: 1;
+}
+/* line 165, ../bower_components/foundation/scss/foundation/components/_global.scss */
+.main-content .sbver:before, .main-content .sbver:after {
+  content: " ";
+  display: table;
+}
+/* line 166, ../bower_components/foundation/scss/foundation/components/_global.scss */
+.main-content .sbver:after {
+  clear: both;
+}
+/* line 164, ../scss/_custom.scss */
 .main-content .sbver ul {
   margin: 0;
 }
-/* line 163, ../scss/_custom.scss */
+/* line 166, ../scss/_custom.scss */
 .main-content .sbver ul li {
   display: inline;
   float: left;
   margin-right: 5px;
 }
-/* line 171, ../scss/_custom.scss */
+/* line 174, ../scss/_custom.scss */
 .main-content span.r {
   color: #d92239;
   font-size: 130%;
 }
-/* line 175, ../scss/_custom.scss */
+/* line 178, ../scss/_custom.scss */
 .main-content span.g {
   color: #009452;
   font-size: 130%;
 }
-/* line 179, ../scss/_custom.scss */
+/* line 182, ../scss/_custom.scss */
 .main-content span.b {
   color: #2b5da9;
   font-size: 130%;
 }
-/* line 183, ../scss/_custom.scss */
+/* line 186, ../scss/_custom.scss */
 .main-content span.p {
   color: #ff6d7f;
   font-size: 130%;
 }
-/* line 188, ../scss/_custom.scss */
+/* line 191, ../scss/_custom.scss */
 .main-content .next_bt {
   display: block;
   clear: both;
@@ -7947,70 +7961,70 @@ nav .icon-wpd02 {
   text-align: center;
 }
 
-/* line 199, ../scss/_custom.scss */
+/* line 202, ../scss/_custom.scss */
 .site-footer {
   margin-top: 50px;
   padding: 20px 0;
   background-color: #333;
   color: #fff;
 }
-/* line 204, ../scss/_custom.scss */
+/* line 207, ../scss/_custom.scss */
 .site-footer .row {
   margin-bottom: 0;
 }
-/* line 207, ../scss/_custom.scss */
+/* line 210, ../scss/_custom.scss */
 .site-footer a {
   color: #7d7d7d;
 }
-/* line 209, ../scss/_custom.scss */
+/* line 212, ../scss/_custom.scss */
 .site-footer a:hover {
   text-decoration: underline;
 }
-/* line 213, ../scss/_custom.scss */
+/* line 216, ../scss/_custom.scss */
 .site-footer h4 {
   color: #fff;
 }
 
-/* line 218, ../scss/_custom.scss */
+/* line 221, ../scss/_custom.scss */
 .main-img {
   padding: 150px 0;
   background-color: #eee;
 }
-/* line 221, ../scss/_custom.scss */
+/* line 224, ../scss/_custom.scss */
 .main-img h1, .main-img h2, .main-img h3, .main-img h4 {
   text-shadow: 2px 2px 1px black;
   color: #FFF;
 }
 
-/* line 226, ../scss/_custom.scss */
+/* line 229, ../scss/_custom.scss */
 .title {
   margin-bottom: 40px;
   text-align: center;
 }
 
-/* line 231, ../scss/_custom.scss */
+/* line 234, ../scss/_custom.scss */
 .panel.np p, .panel.np h4 {
   margin: 0;
   padding: 10px 10px 0 10px;
 }
 
-/* line 236, ../scss/_custom.scss */
+/* line 239, ../scss/_custom.scss */
 .post-meta li {
   display: inline;
   margin-left: 20px;
 }
 
-/* line 240, ../scss/_custom.scss */
+/* line 243, ../scss/_custom.scss */
 .meta-nav.button {
   background-color: #2c3e50;
 }
 
-/* line 243, ../scss/_custom.scss */
+/* line 246, ../scss/_custom.scss */
 .pagination.loop-pagination {
   text-align: center;
 }
 
-/* line 246, ../scss/_custom.scss */
+/* line 249, ../scss/_custom.scss */
 .page-numbers {
   display: inline-block;
   padding: 10px;
@@ -8018,27 +8032,27 @@ nav .icon-wpd02 {
   background-color: #E9E9E9;
 }
 
-/* line 252, ../scss/_custom.scss */
+/* line 255, ../scss/_custom.scss */
 .prime-banner-top, .prime-banner-bottom {
   margin-bottom: 50px;
 }
 
-/* line 256, ../scss/_custom.scss */
+/* line 259, ../scss/_custom.scss */
 #comments-list .vcard {
   margin: 0;
   padding: 0;
   border: none;
 }
-/* line 261, ../scss/_custom.scss */
+/* line 264, ../scss/_custom.scss */
 #comments-list .comment-body {
   border-top: 1px solid #ccc;
 }
 
-/* line 265, ../scss/_custom.scss */
+/* line 268, ../scss/_custom.scss */
 #comments-pagination {
   margin: 50px 0;
 }
-/* line 267, ../scss/_custom.scss */
+/* line 270, ../scss/_custom.scss */
 #comments-pagination a {
   padding-top: 0.875rem;
   padding-right: 1.75rem;
@@ -8049,26 +8063,26 @@ nav .icon-wpd02 {
   font-size: 0.8125rem;
 }
 
-/* line 277, ../scss/_custom.scss */
+/* line 280, ../scss/_custom.scss */
 .avatar img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 281, ../scss/_custom.scss */
+/* line 284, ../scss/_custom.scss */
 .user.with-name.with-biography {
   overflow: hidden;
   margin-bottom: 20px;
 }
 
-/* line 285, ../scss/_custom.scss */
+/* line 288, ../scss/_custom.scss */
 .shortcode-author-avatars .author-list {
   float: none;
   padding-bottom: 0;
   width: auto;
 }
 
-/* line 290, ../scss/_custom.scss */
+/* line 293, ../scss/_custom.scss */
 .shortcode-author-avatars div.author-list .user {
   display: block;
   float: none;
@@ -8077,43 +8091,43 @@ nav .icon-wpd02 {
 }
 
 @media screen and (max-width: 500px) {
-  /* line 298, ../scss/_custom.scss */
+  /* line 301, ../scss/_custom.scss */
   .main-img {
     padding: 20px 0;
   }
-  /* line 300, ../scss/_custom.scss */
+  /* line 303, ../scss/_custom.scss */
   .main-img.mb {
     margin-bottom: 10px;
   }
 
-  /* line 304, ../scss/_custom.scss */
+  /* line 307, ../scss/_custom.scss */
   .prime-banner-top, .prime-banner-bottom {
     margin: 0 -15px 20px -15px;
   }
 
-  /* line 307, ../scss/_custom.scss */
+  /* line 310, ../scss/_custom.scss */
   .main-content {
     margin-top: 10px;
   }
-  /* line 309, ../scss/_custom.scss */
+  /* line 312, ../scss/_custom.scss */
   .main-content p, .main-content li {
     font-size: 1rem;
     line-height: 1.5;
   }
-  /* line 313, ../scss/_custom.scss */
+  /* line 316, ../scss/_custom.scss */
   .main-content h1, .main-content h2, .main-content h3 {
     font-size: 1.375rem;
   }
-  /* line 316, ../scss/_custom.scss */
+  /* line 319, ../scss/_custom.scss */
   .main-content blockquote {
     margin: 1.5em 0;
   }
-  /* line 319, ../scss/_custom.scss */
+  /* line 322, ../scss/_custom.scss */
   .main-content ul {
     margin-left: 30px;
   }
 
-  /* line 323, ../scss/_custom.scss */
+  /* line 326, ../scss/_custom.scss */
   .avatar img {
     width: 50px;
     height: 50px;
