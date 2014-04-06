@@ -24,7 +24,7 @@
 
 *{
     @include box-sizing(border-box); //はみ出さないように
-    word-break: break-all; 
+    word-break: break-word; 
 }
 img {
     max-width: 100% !important; //画像がはみ出さないように
