@@ -9202,80 +9202,86 @@ pre {
   }
 }
 /* line 2, scss/_entry-content.scss */
-.entry-content h1, .entry-content h2 {
+.entry-content h1, .entry-content h2, .comment-content h1, .comment-content h2 {
   margin-top: 30px;
 }
 /* line 5, scss/_entry-content.scss */
-.entry-content h3, .entry-content h4 {
+.entry-content h3, .entry-content h4, .comment-content h3, .comment-content h4 {
   margin-top: 30px;
 }
 /* line 8, scss/_entry-content.scss */
-.entry-content h1 {
+.entry-content h1, .comment-content h1 {
   background-color: #efefef;
   padding: 10px;
 }
 /* line 12, scss/_entry-content.scss */
-.entry-content h2 {
+.entry-content h2, .comment-content h2 {
   border-bottom: 1px solid #efefef;
 }
 /* line 15, scss/_entry-content.scss */
-.entry-content h3 {
+.entry-content h3, .comment-content h3 {
   border-left: 5px solid #efefef;
   padding: 5px 0 5px 10px;
 }
 /* line 19, scss/_entry-content.scss */
-.entry-content h4 {
+.entry-content h4, .comment-content h4 {
   border-bottom: 1px solid #efefef;
 }
 /* line 22, scss/_entry-content.scss */
-.entry-content h5 {
+.entry-content h5, .comment-content h5 {
   font-weight: bold;
   margin-top: 30px;
 }
 
-/* line 35, scss/style.scss */
+/* line 32, scss/style.scss */
+.home_img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* line 40, scss/style.scss */
 .single .entry-title {
   border-bottom: 1px solid #ccc;
   padding: 0 0 10px 0;
 }
-/* line 39, scss/style.scss */
+/* line 44, scss/style.scss */
 .single .cat-links a, .single .tags-links a {
   padding: 10px;
   display: inline-block;
   background-color: #f9f9f9;
 }
-/* line 44, scss/style.scss */
+/* line 49, scss/style.scss */
 .single .entry-footer {
   margin-top: 30px;
 }
 
-/* line 52, scss/style.scss */
+/* line 57, scss/style.scss */
 .home .entry-meta, .archive .entry-meta {
   margin-top: -10px;
 }
-/* line 55, scss/style.scss */
+/* line 60, scss/style.scss */
 .home article, .archive article {
   margin-bottom: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid #ccc;
 }
 
-/* line 64, scss/style.scss */
+/* line 69, scss/style.scss */
 .paging-navigation {
   text-align: center;
 }
-/* line 66, scss/style.scss */
+/* line 71, scss/style.scss */
 .paging-navigation a {
   display: inline-block;
   padding: 5px 10px;
   background-color: #f9f9f9;
   border: 1px solid #f9f9f9;
 }
-/* line 71, scss/style.scss */
+/* line 76, scss/style.scss */
 .paging-navigation a:hover {
   background-color: #efefef;
 }
-/* line 75, scss/style.scss */
+/* line 80, scss/style.scss */
 .paging-navigation span {
   display: inline-block;
   padding: 5px 10px;
@@ -9283,18 +9289,18 @@ pre {
   box-sizing: border-box;
 }
 
-/* line 85, scss/style.scss */
+/* line 90, scss/style.scss */
 .page-links a {
   display: inline-block;
   padding: 5px 10px;
   background-color: #f9f9f9;
   border: 1px solid #f9f9f9;
 }
-/* line 90, scss/style.scss */
+/* line 95, scss/style.scss */
 .page-links a:hover {
   background-color: #efefef;
 }
-/* line 94, scss/style.scss */
+/* line 99, scss/style.scss */
 .page-links span {
   display: inline-block;
   padding: 5px 10px;
@@ -9302,13 +9308,30 @@ pre {
   box-sizing: border-box;
 }
 
-/* line 104, scss/style.scss */
+/* line 108, scss/style.scss */
+.comments-title, .comment-reply-title {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 1.25rem;
+}
+
+/* line 114, scss/style.scss */
+.vcard {
+  display: block;
+  background-color: #f6f6f6;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+/* line 123, scss/style.scss */
 #colophon {
   padding: 50px;
   margin-top: 50px;
   background-color: #f9f9f9;
 }
-/* line 108, scss/style.scss */
+/* line 127, scss/style.scss */
 #colophon .site-info {
   text-align: center;
 }

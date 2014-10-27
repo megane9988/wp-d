@@ -28,6 +28,11 @@ and Blueprint http://www.blueprintcss.org/
 @import "grid";
 @import "entry-content";
 
+// home --------------------------------
+.home_img{
+	text-align: center;
+	margin-bottom: 20px;
+}
 
 // single --------------------------------
 
@@ -99,6 +104,20 @@ and Blueprint http://www.blueprintcss.org/
 	}
 }
 
+// comment --------------------------------
+.comments-title,.comment-reply-title{
+	border-top: 1px solid #ccc;
+	margin-top: 30px;
+	padding-top: 10px;
+	font-size: rem-calc(20);
+}
+.vcard {
+	display: block;
+	background-color: #f6f6f6;
+	margin: 0;
+	border: none;
+	padding: 0;
+}
 
 // footer --------------------------------
 #colophon{

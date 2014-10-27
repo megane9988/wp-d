@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header contain-to-grid" role="banner">
+	<header id="masthead" class="site-header contain-to-grid <?php if(is_home()){ ?>fixed<?php } ?>" role="banner">
 		<nav class="top-bar" data-topbar>
 			<ul class="title-area">
 				<li class="name">
@@ -40,5 +40,7 @@
 	</nav>
 
 	</header><!-- #masthead -->
-
+	<?php if(is_home()){ ?><div class="home_img">
+		<img src="<?php bloginfo('template_directory'); ?>/img/home/sunrize.jpg" alt="">
+	</div><!-- /.home_img --><?php } ?>
 	<div id="content" class="site-content">
