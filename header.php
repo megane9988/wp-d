@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header fixed contain-to-grid" role="banner">
+	<header id="masthead" class="site-header contain-to-grid" role="banner">
 		<nav class="top-bar" data-topbar>
 			<ul class="title-area">
 				<li class="name">

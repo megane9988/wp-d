@@ -4,6 +4,9 @@
 #colophon,#primary,#secondary{
 	@include grid-column($columns:12);
 }
+#masthead{
+	margin-bottom: 15px;
+}
 @media #{$large-up} {
 	#primary{
 		@include grid-column($columns:8,$center:true);

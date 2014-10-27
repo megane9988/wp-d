@@ -116,7 +116,7 @@ $oil         : #333333;
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #3b5998;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -213,12 +213,12 @@ $h5-font-size: rem-calc(14);
 $h6-font-size: rem-calc(14);
 
 // We use these to control header size reduction on small screens
-// $h1-font-reduction: rem-calc(10) !default;
-// $h2-font-reduction: rem-calc(10) !default;
-// $h3-font-reduction: rem-calc(5) !default;
-// $h4-font-reduction: rem-calc(5) !default;
-// $h5-font-reduction: 0 !default;
-// $h6-font-reduction: 0 !default;
+$h1-font-reduction: rem-calc(5) !default;
+$h2-font-reduction: rem-calc(5) !default;
+$h3-font-reduction: rem-calc(2) !default;
+$h4-font-reduction: rem-calc(2) !default;
+$h5-font-reduction: 0 !default;
+$h6-font-reduction: 0 !default;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;

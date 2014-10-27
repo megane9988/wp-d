@@ -29,22 +29,35 @@ and Blueprint http://www.blueprintcss.org/
 @import "entry-content";
 
 
-article.post {
-margin-bottom: 30px;
-}
-
 // single --------------------------------
 
-.cat-links a,.tags-links a{
-	padding: 10px;
-	display: inline-block;
-	background-color: $snow;
+.single {
+	.entry-title{
+		border-bottom: 1px solid #ccc;
+		padding: 0 0 10px 0;
+	}
+	.cat-links a,.tags-links a{
+		padding: 10px;
+		display: inline-block;
+		background-color: $snow;
+	}
+	.entry-footer{
+		margin-top: 30px;
+	}
 }
 
-.entry-footer{
-	margin-top: 30px;
-}
+// archive --------------------------------
 
+.home,.archive{
+	.entry-meta{
+		margin-top: -10px;
+	}
+	article{
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ccc;
+	}
+}
 
 //navigation --------------------------------
 
