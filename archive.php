@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _s_foudation_paging_nav(); ?>
+			<?php twentyfourteen_paging_nav(); ?>
 
 		<?php else : ?>
 

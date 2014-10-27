@@ -27,3 +27,72 @@ and Blueprint http://www.blueprintcss.org/
 @import "wpneed";
 @import "grid";
 @import "entry-content";
+
+
+article.post {
+margin-bottom: 30px;
+}
+
+// single --------------------------------
+
+.cat-links a,.tags-links a{
+	padding: 10px;
+	display: inline-block;
+	background-color: $snow;
+}
+
+.entry-footer{
+	margin-top: 30px;
+}
+
+
+//navigation --------------------------------
+
+.paging-navigation{
+	text-align: center;
+	a{
+		display: inline-block;
+		padding: 5px 10px;
+		background-color: $snow;
+		border: 1px solid $snow;
+		&:hover{
+			background-color: $silver;
+		}
+	}
+	span{
+		display: inline-block;
+		padding: 5px 10px;
+		border: 1px solid $silver;
+		box-sizing: border-box;
+	}
+}
+
+
+.page-links{
+	a{
+		display: inline-block;
+		padding: 5px 10px;
+		background-color: $snow;
+		border: 1px solid $snow;
+		&:hover{
+			background-color: $silver;
+		}
+	}
+	span{
+		display: inline-block;
+		padding: 5px 10px;
+		border: 1px solid $silver;
+		box-sizing: border-box;
+	}
+}
+
+
+// footer --------------------------------
+#colophon{
+	padding: 50px;
+	margin-top: 50px;
+	background-color: $snow;
+	.site-info{
+		text-align: center;
+	}
+}

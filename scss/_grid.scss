@@ -1,14 +1,14 @@
-#page {
+#content {
   @include grid-row();
 }
-#masthead,#colophon,#primary,#secondary{
+#colophon,#primary,#secondary{
 	@include grid-column($columns:12);
 }
 @media #{$large-up} {
 	#primary{
-		@include grid-column($columns:8);
+		@include grid-column($columns:8,$center:true);
 	}
 	#secondary{
-		@include grid-column($columns:4);
+		@include grid-column($columns:8,$center:true);
 	}
 }

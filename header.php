@@ -20,18 +20,25 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s_foudation_foudation' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
+	<header id="masthead" class="site-header fixed contain-to-grid" role="banner">
+		<nav class="top-bar" data-topbar>
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">WP-D</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+			</ul>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', '_s_foudation_foudation' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<section class="top-bar-section">
+			<!-- Right Nav Section -->
+			<ul class="right">
+				<li><a href="/about/">About</a></li>
+				<li><a href="/consulting/">Consulting</a></li>
+			</ul>
+		</section>
+	</nav>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -48,12 +48,12 @@ function _s_foudation_post_nav() {
 		return;
 	}
 	?>
+	<hr>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s_foudation_foudation' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', '_s_foudation_foudation' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     '_s_foudation_foudation' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( 'Prev : %title', 'Previous post link', '_s_foudation_foudation' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( 'Next : %title', 'Next post link',     '_s_foudation_foudation' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -93,15 +93,15 @@ function _s_foudation_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', '_s_foudation_foudation' ) );
+		$categories_list = get_the_category_list( __( ' ', '_s_foudation_foudation' ) );
 		if ( $categories_list && _s_foudation_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( '%1$s', '_s_foudation_foudation' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', '_s_foudation_foudation' ) );
+		$tags_list = get_the_tag_list( '', __( ' ', '_s_foudation_foudation' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( ', %1$s', '_s_foudation_foudation' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( ' %1$s', '_s_foudation_foudation' ) . '</span>', $tags_list );
 		}
 	}
 
