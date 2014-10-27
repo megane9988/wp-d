@@ -1,34 +1,35 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package _s_foudation
+ */
 
-<div class="row main-content">
-	<div class="large-9 large-centered columns">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h2><?php the_title(); ?></h2>
-			</div>
-			<?php the_content(); ?>
-			<?php if (!is_page()){?>
-			<ul class="no-bullet post-meta">
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', 'page' ); ?>
+
 				<?php
-						$cats = get_the_category(); 
-						foreach( $cats as $cat) { 
-							echo '<li><span class="secondary radius label">';
-							echo $cat->cat_name . '</span></li>'; 
-						}
-						$posttags = get_the_tags(); 
-						if ($posttags) { 
-							foreach($posttags as $tag) { 
-							echo '<li><span class="secondary radius label">';
-							echo $tag->name . '</span></li>'; 
-							} 
-						} 
-						?>
-			</ul>
-			<?php }?>
-			<?php edit_post_link('編集','(',')'); ?>
-			<?php wp_link_pages( ); ?>
-		<?php endwhile;?>
-		<?php comments_template(); ?>
-	</div>
-</div>
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

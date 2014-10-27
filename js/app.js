@@ -1,5 +1,5 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-(function($){
+jQuery(document).ready(function(){
 	$(document).foundation();
-})(jQuery);
+});

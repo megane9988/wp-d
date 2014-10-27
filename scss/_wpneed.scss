@@ -1,0 +1,48 @@
+// WordPress need
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.bypostauthor,
+.sticky
+{
+	max-width: 100%;
+}
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption{
+	-webkit-box-sizing: border-box ;
+	-moz-box-sizing: border-box ;
+	box-sizing: border-box ;
+	// border: 1px solid #ccc;
+	padding: 10px;
+}
+p.wp-caption-text{
+	text-align: center;
+	margin-bottom: 0;
+	// font-size: 12px;
+}
+#wp-calendar {
+	thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td,table thead tr th, table tfoot tr td{
+		font-size: 12px;
+		padding: 5px;
+	}
+}
+table#wp-calendar{
+	min-width: 100%;
+	max-width:100%;
+	#next{
+		text-align: right;
+	}
+}

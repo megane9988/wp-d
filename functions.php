@@ -1,287 +1,132 @@
 <?php
-// cssとjsの読み込み ---------------------------------------------
-function wp_d_styles() {
-wp_enqueue_style( 'wp_d', get_bloginfo( 'stylesheet_directory') . '/stylesheets/app.css?2014040702', array(), null, 'all');
-wp_enqueue_script( 'foundation_js', get_bloginfo( 'stylesheet_directory') . '/bower_components/foundation/js/foundation.min.js', array('jquery'), false, true );
-wp_enqueue_script( 'app_js', get_bloginfo( 'stylesheet_directory') . '/js/app.js', array(), false, true );
+/**
+ * _s_foudation functions and definitions
+ *
+ * @package _s_foudation
+ */
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 640; /* pixels */
 }
-add_action( 'wp_enqueue_scripts', 'wp_d_styles');
 
-// titleタグ内を適切に表示 (twentyfourteenから流用)---------------------------------------------
-function wp_d_wp_title( $title, $sep ) {
-	global $paged, $page;
+if ( ! function_exists( '_s_foudation_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function _s_foudation_setup() {
 
-	if ( is_feed() )
-		return $title;
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on _s_foudation, use a find and replace
+	 * to change '_s_foudation_foudation' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( '_s_foudation_foudation', get_template_directory() . '/languages' );
 
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	//add_theme_support( 'post-thumbnails' );
 
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'wp_d' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'wp_d_wp_title', 10, 2 );
-
-// ページナビゲーション (twentyfourteenから流用)----------------------------------------------
-if ( ! function_exists( 'wp_d_paging_nav' ) ) :
-function wp_d_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
-
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
-
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-	// Set up paginated links.
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $GLOBALS['wp_query']->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '&larr; 前へ', 'wp_d' ),
-		'next_text' => __( '次へ &rarr;', 'wp_d' )
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', '_s_foudation_foudation' ),
 	) );
 
-	if ( $links ) :
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	) );
 
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<div class="pagination loop-pagination">
-			<?php echo $links; ?>
-		</div><!-- .pagination -->
-	</nav><!-- .navigation -->
-	<?php
-	endif;
+	/*
+	 * Enable support for Post Formats.
+	 * See http://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link',
+	) );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( '_s_foudation_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 }
-endif;
+endif; // _s_foudation_setup
+add_action( 'after_setup_theme', '_s_foudation_setup' );
 
-// ウィジェット設定 ---------------------------------------------
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-		'name'          => 'サイドバー',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-		));
-	register_sidebar(array(
-		'name'          => 'フッター01',
-		'id'            => 'footer01',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-		));
-	register_sidebar(array(
-		'name'          => 'フッター02',
-		'id'            => 'footer02',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-		));
-	register_sidebar(array(
-		'name'          => 'フッター03',
-		'id'            => 'footer03',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-		));
-	register_sidebar(array(
-		'name'          => 'フッター04',
-		'id'            => 'footer04',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-		));
-
-// アイキャッチの利用 ---------------------------------------------
-add_theme_support( 'post-thumbnails' );
-
-// カスタムナビゲーションの利用 ---------------------------------------------
- register_nav_menu('mainmenu', 'メインメニュー');
-
-// テーマテストへの対応 ---------------------------------------------
-add_theme_support( 'automatic-feed-links' );
-if ( ! isset( $content_width ) ) $content_width = 703;
-
-// ソーシャルボタンの導入 ---------------------------------------------
-function SocialButtonVertical()
-{ ?>
-	<ul>
-	<li>
-		<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
-		data-hatena-bookmark-layout="vertical-balloon"
-		data-hatena-bookmark-url="<?php the_permalink(); ?>">
-			<img src="http://b.st-hatena.com/images/entry-button/button-only.gif"
-				alt="このエントリーをはてなブックマークに追加" width="20" height="20"
-				style="border: none">
-		</a>
-	</li>
-	<li>
-			<a href="https://twitter.com/share" class="twitter-share-button"
-		data-lang="en"
-		data-url="<?php the_permalink(); ?>"
-		data-text="<?php the_title(); ?>"
-		data-count="vertical"
-			>Tweet</a>
-	</li>
-	<li>
-			<div class="g-plusone" data-size="tall" data-href="<?php the_permalink(); ?>"></div>
-	</li>
-	<li>
-			<div class="fb-like"
-		data-href="<?php the_permalink(); ?>"
-		data-layout="box_count"
-		data-send="false"
-		data-width="450"
-		data-show-faces="false">
-			</div>
-	</li>
-	</ul>
-<?php }
-
-// ソーシャルボタンの導入 ---------------------------------------------
-function wp_d_bookmarks(){
-	?>
-<script>(function(w,d){
-	w._gaq=[["_setAccount","UA-33477429-1"],["_trackPageview"]];
-	w.___gcfg={lang:"ja"};
-	var s,e = d.getElementsByTagName("script")[0],
-	a=function(u,f){if(!d.getElementById(f)){s=d.createElement("script");
-	s.src=u;if(f){s.id=f;}e.parentNode.insertBefore(s,e);}};
-	a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js","ga");
-	a("https://apis.google.com/js/plusone.js");
-	a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
-	a("//platform.twitter.com/widgets.js","twitter-wjs");
-	a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
-})(this, document);</script>
-	<?php
+/**
+ * Register widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+function _s_foudation_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', '_s_foudation_foudation' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
-add_action('wp_footer', 'wp_d_bookmarks');
+add_action( 'widgets_init', '_s_foudation_widgets_init' );
 
-// アドセンス設定 ---------------------------------------------
-function wpdbones_ad_content_first(){
-if ( !is_admin() ) :?>
-<div class="row">
-	<div class="large-12 columns">
-		<div class="prime-banner-top text-center">
-			<div class="adtxt">スポンサードリンク</div>
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- レスポンシブ -->
-			<ins class="adsbygoogle"
-					 style="display:block"
-					 data-ad-client="ca-pub-2866035444666228"
-					 data-ad-slot="7284098701"
-					 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-		</div>
-	</div>
-</div>
-<?php endif;
-}
+/**
+ * Enqueue scripts and styles.
+ */
+function _s_foudation_scripts() {
+	wp_deregister_script( 'jquery' );
+	wp_enqueue_style( '_s_foudation_foudation-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+	wp_enqueue_script( 'foundation-jquary', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '20130115', false );
+	wp_enqueue_script( 'foundation-min-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/js/app.js', array(), '20130115', true );
 
-function wpdbones_ad_content_above($ad_above){
-if ( !is_admin() ) :?>
-<div class="row">
-	<div class="large-12 columns">
-		<div class="prime-banner-top text-center">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- レスポンシブ -->
-			<ins class="adsbygoogle"
-					 style="display:block"
-					 data-ad-client="ca-pub-2866035444666228"
-					 data-ad-slot="7284098701"
-					 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-		</div>
-	</div>
-</div>
-<?php endif;
-}
-
-function wpdbones_ad_content_below(){
-if ( !is_admin() ) :?>
-<div class="row">
-	<div class="large-12 columns">
-		<div class="prime-banner-bottom text-center">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- レスポンシブ -->
-		<ins class="adsbygoogle"
-				 style="display:block"
-				 data-ad-client="ca-pub-2866035444666228"
-				 data-ad-slot="7284098701"
-				 data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		</div>
-	</div>
-</div>
-<?php endif;
-}
-add_action( 'wpdbones-ad-content-first', 'wpdbones_ad_content_first' );
-add_action( 'wpdbones-ad-content-above', 'wpdbones_ad_content_above' );
-add_action( 'wpdbones-ad-content-below', 'wpdbones_ad_content_below' );
-
-// ヘッダーのACFへの考慮 ---------------------------------------------
-if (!function_exists('get_field')) {
-	function get_field($key) {
-		if ($key == 'catchcopy') {
-			return '投稿のキャッチコピーを表示（ACFを有効化し"catchcopy"というキーでフィールドを設定してください）';
-		} elseif ($key == 'subcopy') {
-			return '投稿のサブコピーを表示（ACFを有効化し"subcopy"というキーでフィールドを設定してください）';
-		} else {
-			return 'Advanced Custom Fieldsプラグインが有効化されていません。';
-		}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
+add_action( 'wp_enqueue_scripts', '_s_foudation_scripts' );
 
-// Jetpackの関連記事のタイトルを編集 ---------------------------------------------
-function jetpackme_move_related_posts_titles( $options ) {
-	$options = '<h3>関連の記事</h3>';
-    return $options;
-}
-add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_move_related_posts_titles' );
 
-// Jetpackのog:descriptionをキャッチコピーに差し替え ---------------------------------------------
-function wp_d_jetpack_open_graph_base_tags( $tags ) {
-	if ( function_exists('get_field') && is_singular() ) {
-		$copy = get_field('catchcopy') . get_field('subcopy');
-		$tags['og:description'] = ($copy) ? $copy : $tags['og:description'];
-	}
-	return $tags;
-}
-add_filter( 'jetpack_open_graph_base_tags', 'wp_d_jetpack_open_graph_base_tags' );
+/**
+ * Implement the Custom Header feature.
+ */
+//require get_template_directory() . '/inc/custom-header.php';
 
-// 著者情報を一旦外す ---------------------------------------------
-remove_filter( 'the_content', 'pad_add_author' ); 
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';

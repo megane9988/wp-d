@@ -1,0 +1,26 @@
+.entry-content{
+	h1,h2{
+		margin-top: 50px;
+	}
+	h3,h4{
+		margin-top: 50px;
+	}
+	h1{
+		background-color: #ccc;
+		padding: 10px;
+	}
+	h2{
+		border-bottom: 1px solid #ccc;
+	}
+	h3{
+		border-left: 5px solid #ccc;
+		padding: 5px 0 5px 10px;
+	}
+	h4{
+		border-bottom: 1px solid #ccc;
+	}
+	h5{
+		font-weight: bold;
+		margin-top: 30px
+	}
+}

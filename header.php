@@ -1,79 +1,37 @@
-<!DOCTYPE html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<!--[if IE 10]><html class="ie10" lang="en" > <![endif]-->
+<?php
+/**
+ * The header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
+ *
+ * @package _s_foudation
+ */
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php wp_head(); ?>
-	<?php if ( has_post_thumbnail() ) : ?>
-		<style>
-			.main-img{
-				background-image: url(
-					<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>
-					);
-				background-repeat: repeat-x;
-				background-position: center center fixed;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-		</style>
-	<?php endif; ?>
-</head>
-<body <?php body_class(); ?>>
-	<div class="contain-to-grid">
-		<nav class="top-bar" data-topbar="">
-			<ul class="title-area">
-				<li class="name">
-					<span class="icon-wpd02"></span>
-					<h1>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h1>
-				</li>
-				<li class="toggle-topbar menu-icon">
-					<a href=""><span>Menu</span></a>
-				</li>
-			</ul>
-			<section class="top-bar-section">
-			<!-- カスタムナビゲーションの読み込み -->
-				<?php wp_nav_menu (array(
-					'theme_location'=>'mainmenu', // 利用するナビゲーション
-					'container'       => false,
-					'menu_class'      => 'right',  // 付与するclass
-					'menu_id'         => 'top', // 付与するid
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'after'           => '<li class="divider"></li>',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s"><li class="divider"></li>%3$s</ul>',
-				)); ?>
-			</section>
-		</nav>
-	</div>
-	<div class="main-img <?php $author = get_userdata($post->post_author); echo $author->display_name; ?>
-	">
-		<div class="row">
-			<div class="large-12 columns text-center">
-					<?php
-					if(get_field('catchcopy'))
-					{
-						echo '<h1>' . get_field('catchcopy') . '</h1>';
-					}
-					?>
-					<?php
-					if(get_field('subcopy'))
-					{
-						echo '<h3>' . get_field('subcopy') . '</h3>';
-					}
-					?>
-			</div>
-		</div>
-	</div>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s_foudation_foudation' ); ?></a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle"><?php _e( 'Primary Menu', '_s_foudation_foudation' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">

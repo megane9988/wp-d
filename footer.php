@@ -1,26 +1,25 @@
-		<div class="site-footer">
-			<div class="row">
-				<div class="large-3 columns">
-					<?php dynamic_sidebar('footer01'); ?>
-				</div>
-				<div class="large-3 columns">
-					<?php dynamic_sidebar('footer02'); ?>
-				</div>
-				<div class="large-3 columns">
-					<?php dynamic_sidebar('footer03'); ?>
-				</div>
-				<div class="large-3 columns">
-					<?php dynamic_sidebar('footer04'); ?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns text-center">
-					<p>
-						Proudly powered by <a href="http://wordpress.org/">WordPress</a> | Theme: <?php $wp_d_theme = wp_get_theme(); echo $wp_d_theme->get( 'Name' ); ?> by <?php echo $wp_d_theme->get( 'Author' ); ?>.
-					</p>
-				</div>
-			</div>
-		</div>
-	<?php wp_footer(); ?>
-	</body>
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after
+ *
+ * @package _s_foudation
+ */
+?>
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', '_s_foudation_foudation' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_s_foudation_foudation' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '_s_foudation_foudation' ), '_s_foudation_foudation', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
 </html>
