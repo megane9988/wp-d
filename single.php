@@ -40,6 +40,37 @@
 			<div class="large-10 large-centered columns">
 				<?php do_action('wpdbones-ad-content-first'); ?>
 				<?php the_content(); ?>
+				<div class="green">
+					<!-- EBiS 3pas tag version 0.00 start -->
+					<script type="text/javascript">
+						var ebis_proto= (location.protocol == 'http:')
+							 ? 'http://'
+							 : 'https://';
+						var ebis_argument  = "sRrG93Nh";
+						var ebis_tag       = "tag5538ade07cfa8";
+						var ebis_alt_img   = encodeURIComponent("");
+						var ebis_alt_link  = encodeURIComponent("");
+						var ebis_width     = 300;
+						var ebis_height    = 250;
+
+						var ebis_ifhtml='<iframe src="%SRC%" noresize="noresize" scrolling="no" hspace="0" vspace="0" frameborder="0" marginheight="0" marginwidth="0" width="'+ebis_width+'" height="'+ebis_height+'" ></iframe>';
+
+						var ebis_amp = "\x26";
+						var ebis_ifsrc = ebis_proto + "as.ebis.ne.jp/resolv.php";
+							ebis_ifsrc += "?argument=" + ebis_argument;
+							ebis_ifsrc += ebis_amp + "tag_id="   + ebis_tag;
+							ebis_ifsrc += ebis_amp + "width="    + ebis_width;
+							ebis_ifsrc += ebis_amp + "height="   + ebis_height;
+							ebis_ifsrc += ebis_amp + "alt_img="  + ebis_alt_img;
+							ebis_ifsrc += ebis_amp + "alt_link=" + ebis_alt_link;
+
+						document.write(ebis_ifhtml.replace("%SRC%",ebis_ifsrc));
+					</script>
+					<noscript>
+					<iframe src="https://as.ebis.ne.jp/resolv.php?html=1&argument=sRrG93Nh&tag_id=tag5538ade07cfa8" noresize="noresize" scrolling="no" hspace="0" vspace="0" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250" ></iframe>
+					</noscript>
+					<!-- EBiS 3pas tag end -->
+				</div>
 				<?php wp_link_pages('before=<div class="link-page mb">&after=</div>&next_or_number=number&pagelink=<span class="page-numbers">%</span>'); ?>
 				<?php do_action('wpdbones-ad-content-below'); ?>
 				<?php echo pad_add_author('') ?>
