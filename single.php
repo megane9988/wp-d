@@ -40,6 +40,17 @@
 			<div class="large-10 large-centered columns">
 				<?php do_action('wpdbones-ad-content-first'); ?>
 				<?php the_content(); ?>
+				<?php wp_link_pages('before=<div class="link-page mb">&after=</div>&next_or_number=number&pagelink=<span class="page-numbers">%</span>'); ?>
+				<?php echo pad_add_author('') ?>
+				<div class="sbver">
+					<div class="social">
+						<?php SocialButtonVertical(); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		  <div class="small-12 medium-6 large-6 columns">
 				<div class="green">
 					<!-- EBiS 3pas tag version 0.00 start -->
 					<script type="text/javascript">
@@ -71,15 +82,10 @@
 					</noscript>
 					<!-- EBiS 3pas tag end -->
 				</div>
-				<?php wp_link_pages('before=<div class="link-page mb">&after=</div>&next_or_number=number&pagelink=<span class="page-numbers">%</span>'); ?>
+		  </div>
+		  <div class="small-12 medium-6 large-6 columns">
 				<?php do_action('wpdbones-ad-content-below'); ?>
-				<?php echo pad_add_author('') ?>
-				<div class="sbver">
-					<div class="social">
-						<?php SocialButtonVertical(); ?>
-					</div>
-				</div>
-			</div>
+		  </div>
 		</div>
 		<?php endwhile;?>
 		<div class="row">
