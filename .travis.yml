@@ -10,14 +10,7 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-    # aliased to a recent 5.5.x version
-    - "5.5"
-    # aliased to a recent 5.4.x version
-    - "5.4"
-    # aliased to a recent 5.3.x version
-    - "5.3"
-    # Current $required_php_version for WordPress: 5.2.4
-    - "5.2"
+  - "5.6"
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
@@ -30,10 +23,6 @@ env:
     # @link https://github.com/WordPress/WordPress/tree/4.0-branch
     - WP_VERSION=4.0 WP_MULTISITE=0
     - WP_VERSION=4.0 WP_MULTISITE=1
-    # WordPress 3.9
-    # @link https://github.com/WordPress/WordPress/tree/3.9-branch
-    - WP_VERSION=3.9 WP_MULTISITE=0
-    - WP_VERSION=3.9 WP_MULTISITE=1
 
 # Declare 5.6 beta in test matrix.
 # @link https://buddypress.trac.wordpress.org/ticket/5620
@@ -58,6 +47,12 @@ before_script:
     # Set up WordPress installation.
     - export WP_DEVELOP_DIR=/tmp/wordpress/
     - mkdir -p $WP_DEVELOP_DIR
+    - export PHPCS_DIR=/tmp/phpcs
+    - export SNIFFS_DIR=/tmp/sniffs
+
+    # Install CodeSniffer for WordPress Coding Standards checks.
+    - bash ./bin/install-phpcs.sh
+
     # Use the Git mirror of WordPress.
     - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
     # Set up theme information.
@@ -74,19 +69,9 @@ before_script:
     - sed -i "s/yourpasswordhere//" wp-tests-config.php
     # Create WordPress database.
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
-    # Install CodeSniffer for WordPress Coding Standards checks.
-    - git clone https://github.com/squizlabs/PHP_CodeSniffer.git php-codesniffer
-    # Install WordPress Coding Standards.
-    - git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wordpress-coding-standards
-    # Hop into CodeSniffer directory.
-    - cd php-codesniffer
-    # Set install path for WordPress Coding Standards
-    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
+
     # Hop into themes directory.
     - cd $theme_dir
-    # After CodeSniffer install you should refresh your path.
-    - phpenv rehash
 
 # Run test script commands.
 # Default is specific to project language.
@@ -95,15 +80,7 @@ script:
     # Search for PHP syntax errors.
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # WordPress Coding Standards
-    # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-    # @link http://pear.php.net/package/PHP_CodeSniffer/
-    # -p flag: Show progress of the run.
-    # -s flag: Show sniff codes in all reports.
-    # -v flag: Print verbose output.
-    # -n flag: Do not print warnings (shortcut for --warning-severity=0)
-    # --standard: Use WordPress as the standard.
-    # --extensions: Only sniff PHP files.
-    - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+    - $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php;
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
